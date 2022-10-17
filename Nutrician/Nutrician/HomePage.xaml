@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Nutrician.HomePage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Welcome xxx" Padding="40" VerticalOptions="StartAndExpand" HorizontalOptions="End"></Label>
+            <StackLayout Orientation="Horizontal">
+                <Entry Placeholder="Search..." VerticalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
