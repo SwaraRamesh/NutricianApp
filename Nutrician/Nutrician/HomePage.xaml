@@ -6,7 +6,7 @@
         <StackLayout Orientation="Horizontal">
             <Label Text="Welcome xxx" Padding="40" VerticalOptions="StartAndExpand" HorizontalOptions="End"></Label>
             <StackLayout Orientation="Horizontal">
-                <Entry Placeholder="Search..." VerticalOptions="Center"/>
+                <Entry Placeholder="Search!!..." VerticalOptions="Center"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
