@@ -4,13 +4,12 @@
              x:Class="Nutrician.RegisterPage"
              BackgroundColor="darkGreen">
     <ContentPage.Content>
-        <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+        <StackLayout Padding="60" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
             <Image Source="TempLogo.png" WidthRequest="150" HeightRequest="150"></Image>
 
             <Entry x:Name="txtFirstName" Placeholder="First Name" TextColor="white" PlaceholderColor="Gray"></Entry>
             <Entry x:Name="txtLastName" Placeholder="Last Name" TextColor="white" PlaceholderColor="Gray"></Entry>
             <Entry x:Name="txtEmail" Placeholder="Email" TextColor="white" PlaceholderColor="Gray"></Entry>
-            <Entry x:Name="txtAge" Placeholder="Age" TextColor="white" PlaceholderColor="Gray"></Entry>
             <Entry x:Name="txtUsername" Placeholder="Username" TextColor="white" PlaceholderColor="Gray"></Entry>
             <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" TextColor="White" PlaceholderColor="Gray"></Entry>
 

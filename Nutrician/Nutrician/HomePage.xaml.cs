@@ -16,5 +16,20 @@ namespace Nutrician
         {
             InitializeComponent();
         }
+
+        public void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MyListPage());
+        }
+        public void Button_Clicked2(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HomePage());
+        }
+
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegisterPage());
+        }
     }
 }

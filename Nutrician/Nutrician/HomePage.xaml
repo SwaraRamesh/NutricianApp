@@ -3,11 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nutrician.HomePage">
     <ContentPage.Content>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Welcome xxx" Padding="40" VerticalOptions="StartAndExpand" HorizontalOptions="End"></Label>
-            <StackLayout Orientation="Horizontal">
-                <Entry Placeholder="Search!!..." VerticalOptions="Center"/>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Label Text="Home" Padding="10" Margin="20"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Label Text="Nutrician" Padding="10"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Label Text="Welcome xxx!" Padding="10" Margin="20"></Label>
+                </StackLayout>
             </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Button
+                    Grid.Row="1"
+                    Margin="40"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Start"
+                    Grid.Column="1"
+                    Text="MyList"
+                    TextColor="DarkMagenta"
+                    BackgroundColor="ForestGreen"
+                    BorderColor="ForestGreen"
+                    BorderWidth="1.5"
+                    CornerRadius="50"
+                    Clicked="Button_Clicked">
+                    </Button>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                    <Button
+                    Grid.Row="1"
+                    Margin="40"
+                    HorizontalOptions="End"
+                    Grid.Column="2"
+                    Text="Reminders"
+                    TextColor="DarkMagenta"
+                    BackgroundColor="ForestGreen"
+                    BorderColor="ForestGreen"
+                    BorderWidth="1.5"
+                    CornerRadius="50"
+                    Clicked="Button_Clicked2">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+            <Entry Placeholder="Search!!..." VerticalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

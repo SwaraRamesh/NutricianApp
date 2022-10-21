@@ -32,5 +32,6 @@ namespace Nutrician
         {
             Navigation.PushAsync(new RegisterPage());
         }
+
     }
 }
