@@ -12,7 +12,7 @@
                     <Label Text="Nutrician" Padding="10"></Label>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                    <Label Text="Welcome xxx!" Padding="10" Margin="20"></Label>
+                    <Label Text="Welcome xxxx!" Padding="10" Margin="20"></Label>
                 </StackLayout>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
