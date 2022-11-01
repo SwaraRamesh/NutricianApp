@@ -48,7 +48,7 @@
                     </Button>
                 </StackLayout>
             </StackLayout>
-            <Entry Placeholder="Search!!..." VerticalOptions="Center"/>
+            <Entry Placeholder="Search!..." VerticalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
