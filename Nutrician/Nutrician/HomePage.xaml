@@ -24,9 +24,9 @@
                     HorizontalOptions="Start"
                     Grid.Column="1"
                     Text="MyList"
-                    TextColor="DarkMagenta"
-                    BackgroundColor="ForestGreen"
-                    BorderColor="ForestGreen"
+                    TextColor="LightPink"
+                    BackgroundColor="LightGreen"
+                    BorderColor="LightGreen"
                     BorderWidth="1.5"
                     CornerRadius="50"
                     Clicked="Button_Clicked">
