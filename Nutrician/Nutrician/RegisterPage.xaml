@@ -4,30 +4,27 @@
              x:Class="Nutrician.RegisterPage"
              BackgroundColor="darkGreen">
     <ContentPage.Content>
-        <CollectionView x:Name="collectionView">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout Padding="60" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
-                        <Image Source="TempLogo.png" WidthRequest="150" HeightRequest="150"></Image>
+        <StackLayout Padding="60" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Image Source="TempLogo.png" WidthRequest="150" HeightRequest="150"></Image>
 
-                        <Entry x:Name="txtFirstName" Placeholder="First Name" TextColor="white" PlaceholderColor="Gray"></Entry>
-                        <Entry x:Name="txtLastName" Placeholder="Last Name" TextColor="white" PlaceholderColor="Gray"></Entry>
-                        <Entry x:Name="txtEmail" Placeholder="Email" TextColor="white" PlaceholderColor="Gray"></Entry>
-                        <Entry x:Name="txtUsername" Placeholder="Username" TextColor="white" PlaceholderColor="Gray"></Entry>
-                        <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" TextColor="White" PlaceholderColor="Gray"></Entry>
+            <Entry x:Name="txtFirstName" Placeholder="First Name" TextColor="white" PlaceholderColor="Gray"></Entry>
+            <Entry x:Name="txtLastName" Placeholder="Last Name" TextColor="white" PlaceholderColor="Gray"></Entry>
+            <Entry x:Name="txtEmail" Placeholder="Email" TextColor="white" PlaceholderColor="Gray"></Entry>
+            <Entry x:Name="txtUsername" Placeholder="Username" TextColor="white" PlaceholderColor="Gray"></Entry>
+            <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" TextColor="White" PlaceholderColor="Gray"></Entry>
 
-                        <Label Text="Gender:"/>
-                        <RadioButton Content="Female"
+            <Label Text="Gender:"/>
+            <RadioButton Content="Female"
                         GroupName="gender"
                         CheckedChanged="OnGenderRadioButtonCheckedChanged" />
-                        <RadioButton Content="Male"
+            <RadioButton Content="Male"
                         GroupName="gender"
                         CheckedChanged="OnGenderRadioButtonCheckedChanged" />
-                        <RadioButton Content="Other"
+            <RadioButton Content="Other"
                         GroupName="gender"
                         CheckedChanged="OnGenderRadioButtonCheckedChanged" IsChecked="true"/>
 
-                        <Button
+            <Button
                          VerticalOptions="Center"
                         Text="Register"
                         TextColor="White"
@@ -36,11 +33,8 @@
                         BorderWidth="1.5"
                         CornerRadius="50"
                         Clicked="Button_Clicked">
-                        </Button>
+            </Button>
 
-                    </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
