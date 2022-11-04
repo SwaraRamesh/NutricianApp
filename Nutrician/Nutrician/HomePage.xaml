@@ -14,6 +14,7 @@
                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
                     <Label Text="Welcome xxxx!" Padding="10" Margin="20"></Label>
                 </StackLayout>
+                
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
@@ -49,6 +50,38 @@
                 </StackLayout>
             </StackLayout>
             <Entry Placeholder="Search!..." VerticalOptions="Center"/>
+            <StackLayout>
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span x:Name="HeartDisease" Text="Heart Disease" TextColor="Gray" FontSize="Medium" FontAttributes="Bold" TextDecorations="Underline"></Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span x:Name="KidneyStones" Text="Kidney Stones" TextColor="Gray" FontSize="Medium" FontAttributes="Bold" TextDecorations="Underline"></Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped2"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span x:Name="Anemia" Text="Anemia" TextColor="Gray" FontSize="Medium" FontAttributes="Bold" TextDecorations="Underline"></Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped3"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

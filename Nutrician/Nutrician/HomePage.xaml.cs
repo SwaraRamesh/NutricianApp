@@ -29,7 +29,15 @@ namespace Nutrician
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new RegisterPage());
+            Navigation.PushAsync(new HeartDiseasePage());
+        }
+        private void TapGestureRecognizer_Tapped2(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new KidneyStones());
+        }
+        private void TapGestureRecognizer_Tapped3(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AnemiaPage());
         }
     }
 }
