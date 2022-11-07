@@ -26,7 +26,7 @@ namespace Nutrician
         protected override void OnResume()
         {
         }
-
+        //
         public void createMedicalConditions()
         {
             String[] avoidHeartDisease = { "oil", "salt", "excessive carbs" };
