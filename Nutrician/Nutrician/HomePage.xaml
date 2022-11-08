@@ -70,7 +70,7 @@
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped2"/>
                     </Label.GestureRecognizers>
-                </Label>
+                 </Label>
                 <Label HorizontalOptions="Center">
                     <Label.FormattedText>
                         <FormattedString>

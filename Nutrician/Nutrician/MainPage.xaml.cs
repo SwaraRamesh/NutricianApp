@@ -14,5 +14,7 @@ namespace Nutrician
         {
             InitializeComponent();
         }
+
+        Person _person;
     }
 }
