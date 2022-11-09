@@ -5,36 +5,9 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
-                <Label HorizontalOptions="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span x:Name="name" Text="Heart Disease" TextColor="Gray" FontSize="Medium" FontAttributes="Bold" TextDecorations="Underline"></Span>
-                        </FormattedString>
-                    </Label.FormattedText>
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                    </Label.GestureRecognizers>
-                </Label>
-                <Label HorizontalOptions="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span x:Name="suggestions" Text="Suggestions:" TextColor="Gray" FontSize="Medium" FontAttributes="Bold" TextDecorations="Underline"></Span>
-                        </FormattedString>
-                    </Label.FormattedText>
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped2"/>
-                    </Label.GestureRecognizers>
-                </Label>
-                <Label HorizontalOptions="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span x:Name="to-avoid" Text="Avoid:" TextColor="Gray" FontSize="Medium" FontAttributes="Bold" TextDecorations="Underline"></Span>
-                        </FormattedString>
-                    </Label.FormattedText>
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped3"/>
-                    </Label.GestureRecognizers>
-                </Label>
+                <Label Text="Heart Disease" VerticalOptions="Center"/>
+                <Label Text="Suggestions:" VerticalOptions="Center"/>
+                <Label Text="Avoid:" VerticalOptions="Center"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

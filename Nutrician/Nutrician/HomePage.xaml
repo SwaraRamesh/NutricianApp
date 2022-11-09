@@ -1,86 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Nutrician.HomePage">
+             x:Class="Nutrician.HomePage"
+             BackgroundColor="LightBlue">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                    <Label Text="Home" Padding="10" Margin="20"></Label>
-                </StackLayout>
-                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                    <Label Text="Nutrician" Padding="10"></Label>
-                </StackLayout>
-                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                    <Label Text="Welcome xxxx!" Padding="10" Margin="20"></Label>
-                </StackLayout>
-                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="Home" Padding="5" ></Label>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Nutrician" Padding="5" ></Label>
+                    <Label Grid.Row="0" Grid.Column="2" Text="Welcome xxxx!" Padding="5"></Label>
+                </Grid>
+
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                    <Button
-                    Grid.Row="1"
-                    Margin="40"
-                    VerticalOptions="Start"
-                    HorizontalOptions="Start"
-                    Grid.Column="1"
-                    Text="MyList"
-                    TextColor="LightPink"
-                    BackgroundColor="LightGreen"
-                    BorderColor="LightGreen"
-                    BorderWidth="1.5"
-                    CornerRadius="50"
-                    Clicked="Button_Clicked" AutomationProperties.IsInAccessibleTree="False">
-                    </Button>
-                </StackLayout>
-                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                    <Button
-                    Grid.Row="1"
-                    Margin="40"
-                    HorizontalOptions="End"
-                    Grid.Column="2"
-                    Text="Reminders"
-                    TextColor="DarkMagenta"
-                    BackgroundColor="ForestGreen"
-                    BorderColor="ForestGreen"
-                    BorderWidth="1.5"
-                    CornerRadius="50"
-                    Clicked="Button_Clicked2">
-                    </Button>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Button
+                        Grid.Row="1"
+                        Margin="10"
+                        VerticalOptions="Start"
+                        HorizontalOptions="Start"
+                        Grid.Column="0"
+                        Text="MyList"
+                        TextColor="LightPink"
+                        BackgroundColor="LightGreen"
+                        BorderColor="LightGreen"
+                        BorderWidth="1.5"
+                        CornerRadius="50"
+                        Clicked="Button_Clicked">
+                        </Button>
+                        <Button
+                        Grid.Row="1"
+                        Margin="80"
+                        HorizontalOptions="End"
+                        Grid.Column="1"
+                        Text="Reminders"
+                        TextColor="DarkMagenta"
+                        BackgroundColor="ForestGreen"
+                        BorderColor="ForestGreen"
+                        BorderWidth="1.5"
+                        CornerRadius="50"
+                        Clicked="Button_Clicked2">
+                        </Button>
+                    </Grid>
                 </StackLayout>
             </StackLayout>
             <Entry Placeholder="Search!..." VerticalOptions="Center"/>
             <StackLayout>
-                <Label HorizontalOptions="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span x:Name="HeartDisease" Text="Heart Disease" TextColor="Gray" FontSize="Medium" FontAttributes="Bold" TextDecorations="Underline"></Span>
-                        </FormattedString>
-                    </Label.FormattedText>
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                    </Label.GestureRecognizers>
-                </Label>
-                <Label HorizontalOptions="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span x:Name="KidneyStones" Text="Kidney Stones" TextColor="Gray" FontSize="Medium" FontAttributes="Bold" TextDecorations="Underline"></Span>
-                        </FormattedString>
-                    </Label.FormattedText>
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped2"/>
-                    </Label.GestureRecognizers>
-                 </Label>
-                <Label HorizontalOptions="Center">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span x:Name="Anemia" Text="Anemia" TextColor="Gray" FontSize="Medium" FontAttributes="Bold" TextDecorations="Underline"></Span>
-                        </FormattedString>
-                    </Label.FormattedText>
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped3"/>
-                    </Label.GestureRecognizers>
-                </Label>
+                <CollectionView x:Name="collectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
