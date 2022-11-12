@@ -25,7 +25,14 @@ namespace Nutrician
 
         public void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new HomePage());
+            if (txtUsername.Text==null || txtPassword.Text==null || txtFirstName.Text==null || txtEmail.Text==null)
+            {
+                DisplayAlert("Oops...", "One or more of the fields are empty!", "OK!");
+            }
+            else
+            {
+                Navigation.PushAsync(new HomePage());
+            }
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)

@@ -16,13 +16,19 @@ namespace Nutrician
         {
             InitializeComponent();
         }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            collectionView.ItemsSource = await App.Database.GetMedicalConditionAsync();
+            await DisplayAlert("on appearing", "on appearing", "Yes", "No");
+        }
         public void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new HomePage());
+            Navigation.PushAsync(new MyListPage());
         }
         public void Button_Clicked2(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new HomePage());
+            Navigation.PushAsync(new RemindersPage());
         }
 
 
@@ -38,5 +44,6 @@ namespace Nutrician
         {
             Navigation.PushAsync(new AnemiaPage());
         }
+
     }
 }

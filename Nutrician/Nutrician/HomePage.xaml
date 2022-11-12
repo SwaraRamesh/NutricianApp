@@ -8,13 +8,13 @@
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" Text="Home" Padding="5" ></Label>
-                    <Label Grid.Row="0" Grid.Column="1" Text="Nutrician" Padding="5" ></Label>
+                    <Label Grid.Row="0" Grid.Column="0" Text="Home" Padding="5"></Label>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Nutrician" Padding="5"></Label>
                     <Label Grid.Row="0" Grid.Column="2" Text="Welcome xxxx!" Padding="5"></Label>
                 </Grid>
 
@@ -23,20 +23,19 @@
                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="20"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Button
                         Grid.Row="1"
-                        Margin="10"
                         VerticalOptions="Start"
                         HorizontalOptions="Start"
                         Grid.Column="0"
                         Text="MyList"
-                        TextColor="LightPink"
-                        BackgroundColor="LightGreen"
+                        TextColor="DarkRed"
+                        BackgroundColor="Green"
                         BorderColor="LightGreen"
                         BorderWidth="1.5"
                         CornerRadius="50"
@@ -44,9 +43,8 @@
                         </Button>
                         <Button
                         Grid.Row="1"
-                        Margin="80"
                         HorizontalOptions="End"
-                        Grid.Column="1"
+                        Grid.Column="2"
                         Text="Reminders"
                         TextColor="DarkMagenta"
                         BackgroundColor="ForestGreen"
@@ -63,6 +61,10 @@
                 <CollectionView x:Name="collectionView">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding name}"
+                                   FontSize="Medium" />
+                            </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
