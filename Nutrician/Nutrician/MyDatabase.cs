@@ -16,6 +16,7 @@ namespace DatabaseEx.Droid
             _database.CreateTableAsync<Person>().Wait();
             _database.CreateTableAsync<MedicalCondition>().Wait();
         }
+        //m
 
         public Task<List<Person>> GetPersonAsync()
         {

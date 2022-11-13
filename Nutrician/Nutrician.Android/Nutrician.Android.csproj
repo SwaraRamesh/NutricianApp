@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v12.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -89,7 +88,7 @@
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Nutrician\Nutrician.csproj">
-      <Project>{5A9DB049-FDB5-4833-A3D0-6BCD834D2D76}</Project>
+      <Project>{231B591C-FC71-4522-8F3A-48AB3613107A}</Project>
       <Name>Nutrician</Name>
     </ProjectReference>
   </ItemGroup>
