@@ -8,8 +8,10 @@ namespace Nutrician
     public class Person
     {
         [PrimaryKey, AutoIncrement]
-        public int id { get; set; }
-        public String username { get; set; }
-        public String password { get; set; }
+        public int? Id { get; set; }
+        [Unique, NotNull]
+        public String Username { get; set; }
+        [NotNull]
+        public String Password { get; set; }
     }
 }

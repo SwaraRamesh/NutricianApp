@@ -8,13 +8,14 @@ namespace Nutrician.Models
     public class MedicalCondition
     {
         [PrimaryKey, AutoIncrement]
-        public int id { get; set; }
-        public string name { get; set; }
-        public string suggestions { get; set; }
-        public string avoid { get; set; }
-        public string meals { get; set; }
-        public string veganMeals { get; set; }
-        public string lactoseIntolerant { get; set; }
+        public int? ID { get; set; }
+        //[Unique]
+        public string Name { get; set; }
+        public string Suggestions { get; set; }
+        public string Avoid { get; set; }
+        public string Meals { get; set; }
+        public string VeganMeals { get; set; }
+        public string LactoseIntolerant { get; set; }
 
        /* public MedicalCondition(string name, string[] suggestions, string[] avoid, string[] meals, string[] veganMeals, string[] lactoseIntolerant)
         {

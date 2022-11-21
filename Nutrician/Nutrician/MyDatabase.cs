@@ -15,6 +15,7 @@ namespace DatabaseEx.Droid
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Person>().Wait();
             _database.CreateTableAsync<MedicalCondition>().Wait();
+            
         }
         //m
 
@@ -25,7 +26,7 @@ namespace DatabaseEx.Droid
 
         public Task<int> SavePersonAsync(Person person)
         {
-            return _database.InsertAsync(person);
+            return _database.InsertOrReplaceAsync(person);
         }
 
         public async Task<int> DeletPersonAsync(Person person)
@@ -62,5 +63,20 @@ namespace DatabaseEx.Droid
         {
             return _database.InsertAllAsync(condition);
         }
+
+        public Task<List<MedicalCondition>> GetDisplayCondition()
+        {
+            return _database.Table<MedicalCondition>().ToListAsync();
+        }
+
+        public Task<MedicalCondition> GetConditionName(String name) {
+            return _database.Table<MedicalCondition>().Where(p => p.Name == name).FirstOrDefaultAsync();
+        }
+
+        public async Task<int> DeleteAllConditionsAsync()
+        {
+            return await _database.DeleteAllAsync<MedicalCondition>();
+        }
+
     }
 }

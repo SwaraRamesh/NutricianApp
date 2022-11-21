@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Nutrician.DisplayCondition">
+    <ContentPage.Content>
+        <StackLayout>
+                <CollectionView x:Name="collectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Grid x:Name="ConditionPage">
+                                    <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <BoxView
+                                        HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Name}"
+                                           HorizontalOptions="Center"
+                                            Grid.RowSpan="2"
+                                            FontSize="30"
+                                            TextColor="Blue"/>
+                                    <BoxView Grid.Row="1"/>
+                                    <Label Text="{Binding Suggestions}"
+                                            Grid.ColumnSpan="1"
+                                            Grid.Row="2"
+                                            Grid.RowSpan="2"
+                                            FontSize="20"
+                                            TextColor="Green"/>
+                                </Grid>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ContentPage.Content>
+</ContentPage>
+

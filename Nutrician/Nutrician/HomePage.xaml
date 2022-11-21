@@ -13,9 +13,13 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0" Text="Home" Padding="5"></Label>
-                    <Label Grid.Row="0" Grid.Column="1" Text="Nutrician" Padding="5"></Label>
-                    <Label Grid.Row="0" Grid.Column="2" Text="Welcome xxxx!" Padding="5"></Label>
+                    <Button
+                        Grid.Row="0" Grid.Column="0"
+                        Text="Home" Padding="5"
+                        Clicked = "Button_Clicked4">
+                    </Button>
+                    <Button Grid.Row="0" Grid.Column="1" Text="Nutrician" Padding="5"></Button>
+                    <Button Grid.Row="0" Grid.Column="2" Text="Welcome xxxx!" Padding="5"></Button>
                 </Grid>
 
             </StackLayout>
@@ -62,8 +66,10 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout>
-                                <Label Text="{Binding name}"
-                                   FontSize="Medium" />
+                                <Button Text="{Binding Name}"
+                                   CommandParameter="{Binding .}"
+                                   FontSize="Medium"
+                                   Clicked="Button_Clicked3"/>
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

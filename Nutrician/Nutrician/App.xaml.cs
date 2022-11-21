@@ -28,6 +28,7 @@ namespace Nutrician
         {
             InitializeComponent();
             createMedicalConditions();
+            //Delete
 
             //MainPage = new MainPage();
 
@@ -51,17 +52,22 @@ namespace Nutrician
             String avoidHeartDisease = "heartsss";//{ "oil", "salt", "excessive carbs" };
             String avoidKidneyStones = "avoidkidney";//{ "salt", "oil", "greens like XXX" };
             //String avoidAnemia = "anemiaAgain";//{ "blood thinners like XXX", "oil" };
-            String suggestionsHeartDisease = "heart";//{ "nuts", "fiber", "cardio" };
+            String suggestionsHeartDisease = "Medicinal- Aspirin, ACE inhibitors/beta-blockers, Medications to lower high blood pressure and high cholesterol,major risk factors of coronary disease";//{ "nuts", "fiber", "cardio" };
             String suggestionsKidneyStones = "kidneys";//{ "nuts", "beans", "fiber" };
             //String suggestionsAnemia = "iron";//{ "reds like pomegranate", "beet root", "water" };
             String meals = "pizza";//{ "Pasta", "Pizza" };
             String veganMeals = "veganmeals";//{ "Vegan Pasta", "Rotis" };
             String lactoseIntolerantMeals = "lactose";//{ "MNM", "milk-less chapati" };
             List<MedicalCondition> conditions = new List<MedicalCondition>();
-            conditions.Add(new MedicalCondition { name = "Heart Disease",suggestions = suggestionsHeartDisease, avoid = avoidHeartDisease, meals = meals, veganMeals=veganMeals, lactoseIntolerant = lactoseIntolerantMeals});
-            conditions.Add(new MedicalCondition { name="Kidney Stones", suggestions = suggestionsKidneyStones, avoid = avoidKidneyStones, meals = meals, veganMeals = veganMeals, lactoseIntolerant = lactoseIntolerantMeals});
+            conditions.Add(new MedicalCondition { Name = "Heart Disease",Suggestions = suggestionsHeartDisease, Avoid = avoidHeartDisease, Meals = meals, VeganMeals=veganMeals, LactoseIntolerant = lactoseIntolerantMeals});
+            conditions.Add(new MedicalCondition { Name="Kidney Stones", Suggestions = suggestionsKidneyStones, Avoid = avoidKidneyStones, Meals = meals, VeganMeals = veganMeals, LactoseIntolerant = lactoseIntolerantMeals});
             //using (Task<int> task =
             App.Database.SaveAllConditionsAsync(conditions);// { }//
+            //App.Database.DeleteAllConditionsAsync(conditions);
         }
+
+        /*public async Task DeleteAllConditions() {
+            await App.Database.DeleteAllConditionsAsync();
+        }*/
     }
 }

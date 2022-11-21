@@ -17,17 +17,17 @@ namespace Nutrician
             InitializeComponent();
         }
 
-        /*Person _person;
+        Person _person;
         public LoginUI(Person person)
         {
             InitializeComponent();
-            DisplayAlert("EDITSSSSs", "Edit?", "yes", "no");
+            //DisplayAlert("EDITSSSSs", "Edit?", "yes", "no");
             Title = "Edit Info";
             _person = person;
-            nameEntry.Text = person.Name;
-            ageEntry.Text = "" + person.Age;
-            nameEntry.Focus();
-        }*/
+            txtUsername.Text = person.Username;
+            txtPassword.Text = "" + person.Password;
+            txtPassword.Focus();
+        }
 
         public void Button_Clicked(object sender, EventArgs e)
         {
@@ -46,13 +46,7 @@ namespace Nutrician
             Navigation.PushAsync(new RegisterPage());
         }
 
-        /*protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            collectionView.ItemsSource = await App.Database.GetPeopleAsync();
-        }
-
-        async void OnButtonClicked(object sender, EventArgs e)
+        /*async void OnButtonClicked(object sender, EventArgs e)
         {
             //var result = await DisplayAlert("add", $"Add {nameEntry.Text} from the database", "Yes", "No");
             if (!string.IsNullOrWhiteSpace(nameEntry.Text) && !string.IsNullOrWhiteSpace(ageEntry.Text))
