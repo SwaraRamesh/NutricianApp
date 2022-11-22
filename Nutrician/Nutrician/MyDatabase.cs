@@ -69,13 +69,19 @@ namespace DatabaseEx.Droid
             return _database.Table<MedicalCondition>().ToListAsync();
         }
 
-        public Task<MedicalCondition> GetConditionName(String name) {
-            return _database.Table<MedicalCondition>().Where(p => p.Name == name).FirstOrDefaultAsync();
+        public Task<MedicalCondition> GetConditionName(String name, int id) {
+            return _database.Table<MedicalCondition>().Where(p => p.Name == name).Where(p => p.ID == id).FirstOrDefaultAsync();
         }
 
         public async Task<int> DeleteAllConditionsAsync()
         {
             return await _database.DeleteAllAsync<MedicalCondition>();
+        }
+
+        public Task<List<MedicalCondition>> Search(string search)
+        {
+            return _database.Table<MedicalCondition>().Where(p => p.Name.StartsWith(search)).ToListAsync();
+            //async = sends it as it reads from the database
         }
 
     }

@@ -17,7 +17,7 @@ namespace Nutrician
 
         public DisplayCondition(MedicalCondition condition)
         {
-            DisplayAlert("Ok?", $"{condition.Name}", "yes", "no");
+            //DisplayAlert("Ok?", $"{condition.Name}", "yes", "no");
             _medicalCondition.Name = condition.Name;
             _medicalCondition.Suggestions = condition.Suggestions;
             _medicalCondition.ID = condition.ID;
@@ -37,6 +37,17 @@ namespace Nutrician
             collectionView.ItemsSource = await App.Database.GetMedicalConditionAsync();
             
         }
+
+        public void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new DisplayCondition());
+        }
+
+        public void HomeButton(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HomePage());
+        }
+        
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {

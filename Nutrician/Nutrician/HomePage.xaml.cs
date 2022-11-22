@@ -16,7 +16,19 @@ namespace Nutrician
         public HomePage()
         {
             InitializeComponent();
+            //collectionView.ItemsSource = App.Database.GetMedicalConditionAsync();
         }
+        Person _person;
+
+        public HomePage(Person person)
+        {
+            Title = "Edit Info";
+            _person = person;
+            //txtFirstName.Text = person.FirstName;
+            //ageEntry.Text = person.LastName;
+            //nameEntry.Focus();
+        }
+
         protected override async void OnAppearing()
         {
             base.OnAppearing();
@@ -24,28 +36,51 @@ namespace Nutrician
             collectionView.ItemsSource = await App.Database.GetMedicalConditionAsync();
         }
 
-        public void Button_Clicked4(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new DisplayCondition());
+        public async void SearchBar_TextChanged(object sender, TextChangedEventArgs e) {
+            collectionView.ItemsSource = await App.Database.Search(e.NewTextValue);
         }
 
-        public void Button_Clicked(object sender, EventArgs e)
+        public void MyListButton(object sender, EventArgs e)
         {
             Navigation.PushAsync(new MyListPage());
         }
-        public void Button_Clicked2(object sender, EventArgs e)
+        public void RemindersButton(object sender, EventArgs e)
         {
             Navigation.PushAsync(new RemindersPage());
         }
 
-        public async void Button_Clicked3(object sender, EventArgs e)
+        public async void ConditionPageButton(object sender, EventArgs e)
         {
             var item = sender as Button;
             var res = item.CommandParameter as MedicalCondition;
             //await DisplayAlert("Ok?", $"{res.Name}", "yes", "no");
             //Navigation.PushAsync(new DisplayCondition(res));
-            Navigation.PushAsync(new DisplayCondition());
+            await Navigation.PushAsync(new DisplayCondition());
         }
+
+        public void HomeButton(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HomePage());
+        }
+
+        public void EditRegistrationButton(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegisterPage());
+        }
+
+        
+        async void EditInfo(Object sender, EventArgs e)
+        {
+            var item = sender as Button;
+            var res = item.CommandParameter as Person;
+            //await DisplayAlert("Edit", " invoked.", "OK","yes");
+
+            await DisplayAlert("EDIT", $"Edit {res.FirstName}??", "yes", "no");
+            _person = res;
+            await Navigation.PushAsync(new RegisterPage());
+        }
+        
+
 
         /*async void DeleteAllConditions()
         {

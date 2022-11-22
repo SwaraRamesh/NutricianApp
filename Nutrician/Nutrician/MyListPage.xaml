@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nutrician.MyListPage"
-             BackgroundColor="LightPink">
+             BackgroundColor="LightBlue"
+             Title = "Nutrician">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to MyList!" FontSize="20"

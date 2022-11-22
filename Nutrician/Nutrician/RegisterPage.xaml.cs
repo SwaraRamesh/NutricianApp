@@ -17,6 +17,7 @@ namespace Nutrician
         {
             InitializeComponent();
         }
+        Person _person;
 
         protected override async void OnAppearing()
         {
@@ -29,7 +30,7 @@ namespace Nutrician
             // Perform required operation
         }
 
-        public void Button_Clicked(object sender, EventArgs e)
+        async void Button_Clicked(object sender, EventArgs e)
         {
             //SavePerson();
             /*if (txtUsername.Text==null || txtPassword.Text==null || txtFirstName.Text==null || txtEmail.Text==null)
@@ -38,7 +39,27 @@ namespace Nutrician
             }
             else
             {*/
-                Navigation.PushAsync(new HomePage());
+
+            if (_person == null)
+            {
+                //result = await DisplayAlert("LLLLUpdate", "Update from the database", "Yes", "No");
+                await App.Database.SavePersonAsync(new Person
+                {
+                    //FirstName = txtFirstName.Text,
+                    //LastName = txtLastName.Text
+                });
+            }
+            else
+            {
+                _person.FirstName = "FirstName";//FirstName.Text;
+                _person.LastName = "LName";//txtLastName.Text;
+                var result = await DisplayAlert("TOUpdate", $"Update {_person.FirstName} from the database", "Yes", "No");
+                App.Database.UpdatePersonAsync(_person);
+            }
+            //txtFirstName.Text = txtLastName.Text = string.Empty;
+            collectionView.ItemsSource = await App.Database.GetPersonAsync();
+
+            Navigation.PushAsync(new HomePage());
             //}
 
         }

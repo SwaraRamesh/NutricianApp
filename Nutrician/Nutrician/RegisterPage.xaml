@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nutrician.RegisterPage"
-             BackgroundColor="darkGreen">
-    <ContentPage.Content>
+             BackgroundColor="LightBlue"
+             Title = "Nutrician">
         <StackLayout Padding="60" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
             <CollectionView x:Name="collectionView">
                     <CollectionView.ItemTemplate>
@@ -11,11 +11,11 @@
                             <StackLayout>
                             <Image Source="TempLogo.png" WidthRequest="150" HeightRequest="150"></Image>
 
-                            <Entry x:Name="txtFirstName" Placeholder="First Name" TextColor="white" PlaceholderColor="Gray"></Entry>
-                            <Entry x:Name="txtLastName" Placeholder="Last Name" TextColor="white" PlaceholderColor="Gray"></Entry>
-                            <Entry x:Name="txtEmail" Placeholder="Email" TextColor="white" PlaceholderColor="Gray"></Entry>
-                            <Entry x:Name="txtUsername" Placeholder="Username" TextColor="white" PlaceholderColor="Gray"></Entry>
-                            <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" TextColor="White" PlaceholderColor="Gray"></Entry>
+                            <Entry x:Name="txtFirstName" Placeholder="First Name" TextColor="blue" PlaceholderColor="Gray"></Entry>
+                            <Entry x:Name="txtLastName" Placeholder="Last Name" TextColor="blue" PlaceholderColor="Gray"></Entry>
+                            <Entry x:Name="txtEmail" Placeholder="Email" TextColor="blue" PlaceholderColor="Gray"></Entry>
+                            <Entry x:Name="txtUsername" Placeholder="Username" TextColor="blue" PlaceholderColor="Gray"></Entry>
+                            <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" TextColor="blue" PlaceholderColor="Gray"></Entry>
 
                             <Label Text="Gender:"/>
                             <RadioButton Content="Female"
@@ -31,9 +31,9 @@
                             <Button
                                  VerticalOptions="Center"
                                 Text="Register"
-                                TextColor="White"
+                                TextColor="blue"
                                 BackgroundColor="Transparent"
-                                BorderColor="ForestGreen"
+                                BorderColor="blue"
                                 BorderWidth="1.5"
                                 CornerRadius="50"
                                 Clicked="Button_Clicked">
@@ -44,5 +44,4 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
         </StackLayout>
-    </ContentPage.Content>
 </ContentPage>

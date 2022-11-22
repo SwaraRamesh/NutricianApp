@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nutrician.HomePage"
-             BackgroundColor="LightBlue">
-    <ContentPage.Content>
+             BackgroundColor="LightBlue"
+             Title = "Nutrician">
         <StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <Grid>
+                <Grid Margin="15">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
@@ -16,65 +16,71 @@
                     <Button
                         Grid.Row="0" Grid.Column="0"
                         Text="Home" Padding="5"
-                        Clicked = "Button_Clicked4">
+                        Clicked = "HomeButton">
                     </Button>
-                    <Button Grid.Row="0" Grid.Column="1" Text="Nutrician" Padding="5"></Button>
-                    <Button Grid.Row="0" Grid.Column="2" Text="Welcome xxxx!" Padding="5"></Button>
+                    <Button Grid.Row="0" Grid.Column="2"
+                        Text="Welcome xxxx!" Padding="5"
+                        Clicked = "EditRegistrationButton">
+                    </Button>
                 </Grid>
 
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                    <Grid>
+                    <Grid Margin="30">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="50"/>
+
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+
                         </Grid.ColumnDefinitions>
                         <Button
                         Grid.Row="1"
                         VerticalOptions="Start"
                         HorizontalOptions="Start"
                         Grid.Column="0"
-                        Text="MyList"
-                        TextColor="DarkRed"
-                        BackgroundColor="Green"
-                        BorderColor="LightGreen"
+                        Text="  My List  "
+                        TextTransform="None"
+                        TextColor="White"
+                        FontSize="19"
+                        BackgroundColor="Blue"
                         BorderWidth="1.5"
                         CornerRadius="50"
-                        Clicked="Button_Clicked">
+                        Clicked="MyListButton">
                         </Button>
                         <Button
                         Grid.Row="1"
                         HorizontalOptions="End"
-                        Grid.Column="2"
+                        Grid.Column="1"
                         Text="Reminders"
-                        TextColor="DarkMagenta"
-                        BackgroundColor="ForestGreen"
-                        BorderColor="ForestGreen"
+                        TextTransform="None"
+                        FontSize="20"
+                        TextColor="white"
+                        BackgroundColor="blue"
                         BorderWidth="1.5"
                         CornerRadius="50"
-                        Clicked="Button_Clicked2">
+                        Clicked="RemindersButton">
                         </Button>
                     </Grid>
                 </StackLayout>
             </StackLayout>
-            <Entry Placeholder="Search!..." VerticalOptions="Center"/>
+            <Entry TextChanged = "SearchBar_TextChanged" Placeholder="Search!..." VerticalOptions="Center"/>
             <StackLayout>
                 <CollectionView x:Name="collectionView">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout>
-                                <Button Text="{Binding Name}"
+                              <Button Text="{Binding Name}"
                                    CommandParameter="{Binding .}"
                                    FontSize="Medium"
-                                   Clicked="Button_Clicked3"/>
-                            </StackLayout>
+                                   TextTransform="None"
+                                   Clicked="ConditionPageButton"/>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </StackLayout>
         </StackLayout>
-    </ContentPage.Content>
 </ContentPage>

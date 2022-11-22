@@ -31,6 +31,7 @@ namespace Nutrician
 
         public void Button_Clicked(object sender, EventArgs e)
         {
+            //TODO: need to encrypt userID/passwordx
             if (txtUsername.Text == "admin" && txtPassword.Text == "123")
             {
                 Navigation.PushAsync(new HomePage());

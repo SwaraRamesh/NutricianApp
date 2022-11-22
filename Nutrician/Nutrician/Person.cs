@@ -9,9 +9,12 @@ namespace Nutrician
     {
         [PrimaryKey, AutoIncrement]
         public int? Id { get; set; }
-        [Unique, NotNull]
+        //[Unique, NotNull]
         public String Username { get; set; }
-        [NotNull]
+        //[NotNull]
         public String Password { get; set; }
+        //[NotNull]
+        public String FirstName { get; set; }
+        public String LastName { get; set; }
     }
 }
