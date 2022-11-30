@@ -19,7 +19,7 @@
                         Clicked = "HomeButton">
                     </Button>
                     <Button Grid.Row="0" Grid.Column="2"
-                        Text="Welcome xxxx!" Padding="5"
+                        Text="Welcome xxx!" Padding="5"
                         Clicked = "EditRegistrationButton">
                     </Button>
                 </Grid>
@@ -69,18 +69,25 @@
                 </StackLayout>
             </StackLayout>
             <Entry TextChanged = "SearchBar_TextChanged" Placeholder="Search!..." VerticalOptions="Center"/>
-            <StackLayout>
-                <CollectionView x:Name="collectionView">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                              <Button Text="{Binding Name}"
-                                   CommandParameter="{Binding .}"
-                                   FontSize="Medium"
-                                   TextTransform="None"
-                                   Clicked="ConditionPageButton"/>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <CollectionView x:Name="collectionView" VerticalScrollBarVisibility="Always">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                  <Label HorizontalOptions="Center" HorizontalTextAlignment="Center">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Name}"  TextColor="Gray" FontSize="40"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Label.GestureRecognizers>
+                                  </Label>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </ScrollView>
         </StackLayout>
 </ContentPage>

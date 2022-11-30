@@ -84,5 +84,10 @@ namespace DatabaseEx.Droid
             //async = sends it as it reads from the database
         }
 
+        public Task<List<MedicalCondition>> Search2(string search)
+        {
+            return _database.Table<MedicalCondition>().Where(p => p.Suggestions.StartsWith(search)).ToListAsync();
+        }
+
     }
 }

@@ -24,7 +24,7 @@ namespace Nutrician
             _medicalCondition.Avoid = condition.Avoid;
             _medicalCondition.Meals = condition.Meals;
             _medicalCondition.VeganMeals = condition.VeganMeals;
-            _medicalCondition.LactoseIntolerant = condition.LactoseIntolerant;
+            //_medicalCondition.LactoseIntolerant = condition.LactoseIntolerant;
             var ret = condition.Name;
         }
         
@@ -38,7 +38,7 @@ namespace Nutrician
             
         }
 
-        public void Button_Clicked(object sender, EventArgs e)
+        public void AddToListButton(object sender, EventArgs e)
         {
             Navigation.PushAsync(new DisplayCondition());
         }

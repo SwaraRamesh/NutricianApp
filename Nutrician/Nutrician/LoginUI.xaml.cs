@@ -33,11 +33,14 @@ namespace Nutrician
         {
             //TODO: need to encrypt userID/passwordx
             if (txtUsername.Text == "admin" && txtPassword.Text == "123")
+            //if (txtUsername.Text.Equals(txtUsername) && txtPassword.Text.Equals(txtPassword))
             {
+                
                 Navigation.PushAsync(new HomePage());
             }
             else
             {
+                DisplayAlert($"Username is {txtUsername.Text}", "yes", "no");
                 DisplayAlert("Oops...", "Username or Password is incorrect!", "OK!");
             }
         }

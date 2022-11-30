@@ -38,25 +38,28 @@ namespace Nutrician
                 DisplayAlert("Oops...", "One or more of the fields are empty!", "OK!");
             }
             else
-            {*/
+            {
 
             if (_person == null)
             {
                 //result = await DisplayAlert("LLLLUpdate", "Update from the database", "Yes", "No");
                 await App.Database.SavePersonAsync(new Person
                 {
-                    //FirstName = txtFirstName.Text,
-                    //LastName = txtLastName.Text
+                    FirstName = txtFirstName.Text,
+                    LastName = txtLastName.Text
                 });
-            }
-            else
-            {
-                _person.FirstName = "FirstName";//FirstName.Text;
-                _person.LastName = "LName";//txtLastName.Text;
-                var result = await DisplayAlert("TOUpdate", $"Update {_person.FirstName} from the database", "Yes", "No");
+            }*/
+            //else
+            //{
+                //var res = CollectionView. as Person;
+                //await DisplayAlert("EDIT", $"Edit {res.FirstName}??", "yes", "no");
+                //_person = res;
+                //txtFirstName.Text = res.FirstName;
+                //txtLastName.Text = res.LastName;
+                //txtFirstName.Focus();
                 App.Database.UpdatePersonAsync(_person);
-            }
-            //txtFirstName.Text = txtLastName.Text = string.Empty;
+            //}
+        //txtFirstName.Text = txtLastName.Text = string.Empty;
             collectionView.ItemsSource = await App.Database.GetPersonAsync();
 
             Navigation.PushAsync(new HomePage());
@@ -73,10 +76,10 @@ namespace Nutrician
             });
         }*/
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new RegisterPage());
-        }
+        //private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        //{
+          //  Navigation.PushAsync(new RegisterPage());
+        //}
 
     }
 }

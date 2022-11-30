@@ -38,6 +38,7 @@ namespace Nutrician
 
         public async void SearchBar_TextChanged(object sender, TextChangedEventArgs e) {
             collectionView.ItemsSource = await App.Database.Search(e.NewTextValue);
+            collectionView.ItemsSource = await App.Database.Search2(e.NewTextValue);
         }
 
         public void MyListButton(object sender, EventArgs e)
@@ -79,8 +80,16 @@ namespace Nutrician
             _person = res;
             await Navigation.PushAsync(new RegisterPage());
         }
-        
 
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new DisplayCondition());
+        }
+
+        /*void OnScrollViewScrolled(object sender, ScrolledEventArgs e)
+        {
+            Console.WriteLine($"ScrollX: {e.ScrollX}, ScrollY: {e.ScrollY}");
+        }*/
 
         /*async void DeleteAllConditions()
         {

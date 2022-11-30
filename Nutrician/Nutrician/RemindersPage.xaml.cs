@@ -16,5 +16,15 @@ namespace Nutrician
         {
             InitializeComponent();
         }
+
+        public void HomeButton(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HomePage());
+        }
+        public void MyListButton(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MyListPage());
+        }
+        
     }
 }

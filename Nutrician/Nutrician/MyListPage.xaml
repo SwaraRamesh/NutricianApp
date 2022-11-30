@@ -6,6 +6,30 @@
              Title = "Nutrician">
     <ContentPage.Content>
         <StackLayout>
+            <Grid Margin="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        Grid.Row="0" Grid.Column="0"
+                        Text="Home" Padding="5"
+                        Clicked = "HomeButton">
+                    </Button>
+                    <Button
+                        Text="Reminders"
+                        Grid.Row="0" Grid.Column="2"
+                        TextTransform="None"
+                        FontSize="20"
+                        TextColor="white"
+                        BackgroundColor="blue"
+                        BorderWidth="1.5"
+                        CornerRadius="50"
+                        Clicked = "ReminderButton">
+                    </Button>
+                </Grid>
             <Label Text="Welcome to MyList!" FontSize="20"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
