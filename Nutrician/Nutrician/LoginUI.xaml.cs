@@ -32,7 +32,6 @@ namespace Nutrician
         public async void Button_Clicked(object sender, EventArgs e)
         {
             //TODO: need to encrypt userID/passwordx
-            //if (txtUsername.Text == && txtPassword.Text == "123")
             //if (txtUsername.Text.Equals(txtUsername) && txtPassword.Text.Equals(txtPassword))
             Person person = null;
             try
@@ -56,13 +55,6 @@ namespace Nutrician
                 
                 
             }
-
-
-
-
-
-
-
 
             if (txtPassword.Text.Equals(person.Password))
             {

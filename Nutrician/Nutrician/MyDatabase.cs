@@ -89,9 +89,9 @@ namespace DatabaseEx.Droid
             return _database.Table<MedicalCondition>().Where(p => p.Suggestions.StartsWith(search)).ToListAsync();
         }
 
-        public async Task<int> DeleteAllAccountsAsync()
+        /*public async Task<int> DeleteAllAccountsAsync()
         {
             return await _database.DeleteAllAsync<Person>();
-        }
+        }*/
     }
 }
