@@ -12,19 +12,24 @@ namespace Nutrician
 		{
 			InitializeComponent ();
             
+            
 		}
         MedicalCondition _medicalCondition;
 
         public DisplayCondition(MedicalCondition condition)
         {
-            //DisplayAlert("Ok?", $"{condition.Name}", "yes", "no");
+            InitializeComponent();
+            Name.Text = condition.Name;
+            Suggestions.Text = condition.Suggestions;
+            Avoid.Text = condition.Avoid;
+            /*DisplayAlert("Ok?", $"{condition.Name}", "yes", "no");
             _medicalCondition.Name = condition.Name;
             _medicalCondition.Suggestions = condition.Suggestions;
             _medicalCondition.ID = condition.ID;
             _medicalCondition.Avoid = condition.Avoid;
             _medicalCondition.Meals = condition.Meals;
             _medicalCondition.VeganMeals = condition.VeganMeals;
-            //_medicalCondition.LactoseIntolerant = condition.LactoseIntolerant;
+            //_medicalCondition.LactoseIntolerant = condition.LactoseIntolerant;*/
             var ret = condition.Name;
         }
         
@@ -34,13 +39,16 @@ namespace Nutrician
             base.OnAppearing();
             //await DisplayAlert("alert", "alert", "yes", "no");
             //DeleteAllConditions();
-            collectionView.ItemsSource = await App.Database.GetMedicalConditionAsync();
+            //collectionView.ItemsSource =
+            await App.Database.GetConditionName(_medicalCondition.Name, _medicalCondition.ID);
             
         }
 
         public void AddToListButton(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new DisplayCondition());
+            //collectionView.ItemsSource =
+            App.Database.GetConditionName(_medicalCondition.Name, _medicalCondition.ID);
+            Navigation.PushAsync(new DisplayCondition(_medicalCondition));
         }
 
         public void HomeButton(object sender, EventArgs e)
@@ -48,10 +56,9 @@ namespace Nutrician
             Navigation.PushAsync(new HomePage());
         }
         
-
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new DisplayCondition());
+            Navigation.PushAsync(new DisplayCondition(_medicalCondition));
         }
 
         /*async void DeleteAllConditions() {

@@ -19,9 +19,9 @@ namespace DatabaseEx.Droid
         }
         //m
 
-        public Task<List<Person>> GetPersonAsync()
+        public Task<Person> GetPersonByUsernameAsync(String username)
         {
-            return _database.Table<Person>().ToListAsync();
+            return _database.Table<Person>().Where(p => p.Username.Equals(username)).FirstOrDefaultAsync();
         }
 
         public Task<int> SavePersonAsync(Person person)
@@ -89,5 +89,9 @@ namespace DatabaseEx.Droid
             return _database.Table<MedicalCondition>().Where(p => p.Suggestions.StartsWith(search)).ToListAsync();
         }
 
+        public async Task<int> DeleteAllAccountsAsync()
+        {
+            return await _database.DeleteAllAsync<Person>();
+        }
     }
 }

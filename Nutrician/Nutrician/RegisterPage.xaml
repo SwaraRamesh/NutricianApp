@@ -5,43 +5,36 @@
              BackgroundColor="LightBlue"
              Title = "Nutrician">
         <StackLayout Padding="60" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
-            <CollectionView x:Name="collectionView">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout>
-                            <Image Source="TempLogo.png" WidthRequest="150" HeightRequest="150"></Image>
+            <StackLayout>
+            <Image Source="TempLogo.png" WidthRequest="150" HeightRequest="150"></Image>
 
-                            <Entry x:Name="txtFirstName" Placeholder="First Name" TextColor="blue" PlaceholderColor="Gray"></Entry>
-                            <Entry x:Name="txtLastName" Placeholder="Last Name" TextColor="blue" PlaceholderColor="Gray"></Entry>
-                            <Entry x:Name="txtEmail" Placeholder="Email" TextColor="blue" PlaceholderColor="Gray"></Entry>
-                            <Entry x:Name="txtUsername" Placeholder="Username" TextColor="blue" PlaceholderColor="Gray"></Entry>
-                            <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" TextColor="blue" PlaceholderColor="Gray"></Entry>
+            <Entry x:Name="txtFirstName" Placeholder="First Name" TextColor="blue" PlaceholderColor="Gray"></Entry>
+            <Entry x:Name="txtLastName" Placeholder="Last Name" TextColor="blue" PlaceholderColor="Gray"></Entry>
+            <Entry x:Name="txtEmail" Placeholder="Email" TextColor="blue" PlaceholderColor="Gray"></Entry>
+            <Entry x:Name="txtUsername" Placeholder="Username" TextColor="blue" PlaceholderColor="Gray"></Entry>
+            <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" TextColor="blue" PlaceholderColor="Gray"></Entry>
 
-                            <Label Text="Gender:"/>
-                            <RadioButton Content="Female"
-                                        GroupName="gender"
-                                        CheckedChanged="OnGenderRadioButtonCheckedChanged" />
-                            <RadioButton Content="Male"
-                                        GroupName="gender"
-                                        CheckedChanged="OnGenderRadioButtonCheckedChanged" />
-                            <RadioButton Content="Other"
-                                        GroupName="gender"
-                                        CheckedChanged="OnGenderRadioButtonCheckedChanged" IsChecked="true"/>
+            <Label Text="Gender:"/>
+            <RadioButton Content="Female"
+                        GroupName="gender"
+                        CheckedChanged="OnGenderRadioButtonCheckedChanged" />
+            <RadioButton Content="Male"
+                        GroupName="gender"
+                        CheckedChanged="OnGenderRadioButtonCheckedChanged" />
+            <RadioButton Content="Other"
+                        GroupName="gender"
+                        CheckedChanged="OnGenderRadioButtonCheckedChanged" IsChecked="true"/>
 
-                            <Button
-                                 VerticalOptions="Center"
-                                Text="Register"
-                                TextColor="blue"
-                                BackgroundColor="Transparent"
-                                BorderColor="blue"
-                                BorderWidth="1.5"
-                                CornerRadius="50"
-                                Clicked="Button_Clicked">
-                            </Button>
-                            </StackLayout>
-                    
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+            <Button
+                    VerticalOptions="Center"
+                Text="Register"
+                TextColor="blue"
+                BackgroundColor="Transparent"
+                BorderColor="blue"
+                BorderWidth="1.5"
+                CornerRadius="50"
+                Clicked="Button_Clicked">
+            </Button>
+            </StackLayout>
         </StackLayout>
 </ContentPage>

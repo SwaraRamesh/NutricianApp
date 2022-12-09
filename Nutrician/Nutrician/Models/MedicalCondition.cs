@@ -9,7 +9,7 @@ namespace Nutrician.Models
     {
         [PrimaryKey, AutoIncrement]
         // ? means it can be null or it is nullable
-        public int? ID { get; set; }
+        public int ID { get; set; }
         //[Unique]
         public string Name { get; set; }
         public string Suggestions { get; set; }

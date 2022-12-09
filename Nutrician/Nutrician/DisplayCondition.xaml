@@ -31,12 +31,7 @@
                     </Button>
                 </Grid>
             </StackLayout>
-                <CollectionView x:Name="collectionView" VerticalScrollBarVisibility="Always">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <ScrollView>
-                                <StackLayout>
-                                    <Grid x:Name="ConditionPage">
+                <Grid x:Name="ConditionPage">
                                         <Grid.RowDefinitions>
                                         <RowDefinition Height="40"/>
                                         </Grid.RowDefinitions>
@@ -45,8 +40,10 @@
                                         </Grid.ColumnDefinitions>
                                         <BoxView
                                             HorizontalOptions="Center"/>
-                                        <Label Text="{Binding Name}"
-                                               HorizontalOptions="Center"
+                                        <Label
+                                                x:Name="Name"
+                                                Text="{Binding Name}"
+                                                HorizontalOptions="Center"
                                                 Grid.RowSpan="2"
                                                 Margin="20"
                                                 TextTransform="None"
@@ -61,8 +58,10 @@
                                                 Margin="20"
                                                 FontSize="20"
                                                 TextColor="Black"
-                                               ></Label>
-                                        <Label Text="{Binding Suggestions}"
+                                                
+                                                ></Label>
+                                        <Label  x:Name="Suggestions"
+                                                Text="{Binding Suggestions}"
                                                 Grid.ColumnSpan="1"
                                                 Grid.Row="2"
                                                 Grid.RowSpan="1"
@@ -78,8 +77,9 @@
                                                 Margin="20"
                                                 FontSize="20"
                                                 TextColor="Black"
-                                               ></Label>
-                                        <Label Text="{Binding Avoid}"
+                                                ></Label>
+                                        <Label  x:Name="Avoid"
+                                                Text="{Binding Avoid}"
                                                 Grid.ColumnSpan="1"
                                                 Grid.Row="4"
                                                 Grid.RowSpan="1"
@@ -88,10 +88,6 @@
                                                 FontSize="20"
                                                 TextColor="Black"/>
                                     </Grid>
-                                </StackLayout>
-                            </ScrollView>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+
             </StackLayout>
 </ContentPage>

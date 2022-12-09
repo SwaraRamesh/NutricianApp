@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.ComponentModel;
+using SQLite;
 
 namespace Nutrician
 {
@@ -19,10 +21,22 @@ namespace Nutrician
         }
         Person _person;
 
+        /*public RegisterPage(Person person)
+        {
+            InitializeComponent();
+
+            DisplayAlert("EDITSSSSs", "Edit?", "yes", "no");
+            Title = "Edit Info";
+            _person = person;
+            txtFirstName = person.FirstName;
+            txtLastName.Text = person.LastName;
+            txtFirstName.Focus();
+        }*/
+
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            collectionView.ItemsSource = await App.Database.GetPersonAsync();
+            //await App.Database.GetPersonAsync();
         }
 
         void OnGenderRadioButtonCheckedChanged(object sender, CheckedChangedEventArgs e)
@@ -38,9 +52,9 @@ namespace Nutrician
                 DisplayAlert("Oops...", "One or more of the fields are empty!", "OK!");
             }
             else
-            {
+            {*/
 
-            if (_person == null)
+            /*if (_person == null)
             {
                 //result = await DisplayAlert("LLLLUpdate", "Update from the database", "Yes", "No");
                 await App.Database.SavePersonAsync(new Person
@@ -49,20 +63,26 @@ namespace Nutrician
                     LastName = txtLastName.Text
                 });
             }*/
-            //else
-            //{
-                //var res = CollectionView. as Person;
-                //await DisplayAlert("EDIT", $"Edit {res.FirstName}??", "yes", "no");
-                //_person = res;
-                //txtFirstName.Text = res.FirstName;
-                //txtLastName.Text = res.LastName;
-                //txtFirstName.Focus();
+            /*else
+            {*/
+            //var res = sender as Person;
+            //await DisplayAlert("EDIT", $"Edit {res.FirstName}??", "yes", "no");
+            //_person = res;
+            _person = new Person();
+            _person.FirstName = txtFirstName.Text;
+            _person.LastName = txtLastName.Text;
+            _person.LastName = txtEmail.Text;
+            _person.LastName = txtUsername.Text;
+            _person.LastName = txtPassword.Text;
+            txtUsername.Focus();
+            
                 App.Database.UpdatePersonAsync(_person);
             //}
-        //txtFirstName.Text = txtLastName.Text = string.Empty;
-            collectionView.ItemsSource = await App.Database.GetPersonAsync();
+            //txtFirstName.Text = txtLastName.Text = string.Empty;
+            //collectionView.ItemsSource = await App.Database.GetPersonAsync();
+            //res = await App.Database.GetPersonAsync();
 
-            Navigation.PushAsync(new HomePage());
+            Navigation.PushAsync(new LoginUI());
             //}
 
         }

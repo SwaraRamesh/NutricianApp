@@ -26,22 +26,57 @@ namespace Nutrician
             _person = person;
             txtUsername.Text = person.Username;
             txtPassword.Text = "" + person.Password;
-            txtPassword.Focus();
+            txtUsername.Focus();
         }
 
-        public void Button_Clicked(object sender, EventArgs e)
+        public async void Button_Clicked(object sender, EventArgs e)
         {
             //TODO: need to encrypt userID/passwordx
-            if (txtUsername.Text == "admin" && txtPassword.Text == "123")
+            //if (txtUsername.Text == && txtPassword.Text == "123")
             //if (txtUsername.Text.Equals(txtUsername) && txtPassword.Text.Equals(txtPassword))
+            Person person = null;
+            try
             {
+                person = App.Database.GetPersonByUsernameAsync(txtUsername.Text).Result;
+            }
+            catch (AggregateException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            if (person == null)
+            {
+                var alert = await DisplayAlert("Oops!", "Username does not exist. Please register or enter username again.", "Login", "Register");
+                if (alert)
+                {
+                    txtUsername.Focus();
+                    return;
+                    //Navigation.PushAsync(new LoginUI());
+                }
+                await Navigation.PushAsync(new RegisterPage());
                 
-                Navigation.PushAsync(new HomePage());
+                
+            }
+
+
+
+
+
+
+
+
+            if (txtPassword.Text.Equals(person.Password))
+            {
+
+                //await DisplayAlert("Welcome", $"Welcome {person.FirstName}", "OK");
+
+                var nextPage = new HomePage();
+                nextPage.BindingContext = person;
+                await Navigation.PushAsync(nextPage);
             }
             else
             {
-                DisplayAlert($"Username is {txtUsername.Text}", "yes", "no");
-                DisplayAlert("Oops...", "Username or Password is incorrect!", "OK!");
+                await DisplayAlert("Oops...", "Username or Password is incorrect!", "OK!");
+                txtUsername.Focus();
             }
         }
 

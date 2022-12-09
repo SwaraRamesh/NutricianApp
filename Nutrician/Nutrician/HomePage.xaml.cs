@@ -56,7 +56,7 @@ namespace Nutrician
             var res = item.CommandParameter as MedicalCondition;
             //await DisplayAlert("Ok?", $"{res.Name}", "yes", "no");
             //Navigation.PushAsync(new DisplayCondition(res));
-            await Navigation.PushAsync(new DisplayCondition());
+            await Navigation.PushAsync(new DisplayCondition(res));
         }
 
         public void HomeButton(object sender, EventArgs e)
@@ -83,7 +83,10 @@ namespace Nutrician
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new DisplayCondition());
+            var item = sender as Label;
+            var res = item.BindingContext as MedicalCondition;
+            Application.Current.Properties["Name"] = res.Name;
+            Navigation.PushAsync(new DisplayCondition(res));
         }
 
         /*void OnScrollViewScrolled(object sender, ScrolledEventArgs e)

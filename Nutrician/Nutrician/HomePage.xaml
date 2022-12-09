@@ -19,7 +19,8 @@
                         Clicked = "HomeButton">
                     </Button>
                     <Button Grid.Row="0" Grid.Column="2"
-                        Text="Welcome xxx!" Padding="5"
+                        Text="{Binding Username, StringFormat='Welcome {0:F0}'}"
+                        Padding="5"
                         Clicked = "EditRegistrationButton">
                     </Button>
                 </Grid>
