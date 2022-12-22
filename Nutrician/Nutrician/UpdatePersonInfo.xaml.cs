@@ -39,6 +39,6 @@ namespace Nutrician
             nextPage.BindingContext = _person;
             await Navigation.PushAsync(nextPage);
         }
-    }
+    }//
 
 }
