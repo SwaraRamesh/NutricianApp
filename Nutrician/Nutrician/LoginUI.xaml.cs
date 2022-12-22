@@ -36,32 +36,41 @@ namespace Nutrician
             Person person = null;
             try
             {
+                
                 person = App.Database.GetPersonByUsernameAsync(txtUsername.Text).Result;
+                if (person == null)
+                {
+                    await DisplayAlert("Oops!", "Username does not exist. Please register or enter username again.", "OK");
+                    txtUsername.Focus();
+                    return;
+                }
             }
             catch (AggregateException ex)
             {
                 Console.WriteLine(ex);
             }
-            if (person == null)
-            {
-                var alert = await DisplayAlert("Oops!", "Username does not exist. Please register or enter username again.", "Login", "Register");
-                if (alert)
-                {
-                    txtUsername.Focus();
-                    return;
-                    //Navigation.PushAsync(new LoginUI());
-                }
-                await Navigation.PushAsync(new RegisterPage());
+            //if (person == null)
+            //
+                //await DisplayAlert("Oops!", "Username does not exist. Please register or enter username again.", "OK");
+                //if (alert)
+                //{
+                    
+                    //return;
+                   //Navigation.PushAsync(new LoginUI());
+                //}
+                //else
+                //{
+                    //Navigation.PushAsync(new RegisterPage());
+                //}
                 
-                
-            }
+            //}
 
             if (txtPassword.Text.Equals(person.Password))
             {
 
                 //await DisplayAlert("Welcome", $"Welcome {person.FirstName}", "OK");
 
-                var nextPage = new HomePage();
+                var nextPage = new HomePage(person);
                 nextPage.BindingContext = person;
                 await Navigation.PushAsync(nextPage);
             }

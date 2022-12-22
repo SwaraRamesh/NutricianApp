@@ -22,6 +22,7 @@ namespace Nutrician
 
         public HomePage(Person person)
         {
+            InitializeComponent();
             Title = "Edit Info";
             _person = person;
             //txtFirstName.Text = person.FirstName;
@@ -38,7 +39,7 @@ namespace Nutrician
 
         public async void SearchBar_TextChanged(object sender, TextChangedEventArgs e) {
             collectionView.ItemsSource = await App.Database.Search(e.NewTextValue);
-            collectionView.ItemsSource = await App.Database.Search2(e.NewTextValue);
+            //collectionView.ItemsSource = await App.Database.Search2(e.NewTextValue);
         }
 
         public void MyListButton(object sender, EventArgs e)
@@ -64,13 +65,15 @@ namespace Nutrician
             Navigation.PushAsync(new HomePage());
         }
 
-        public void EditRegistrationButton(object sender, EventArgs e)
+        public async void EditRegistrationButton(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new RegisterPage());
+            var nextPage = new UpdatePersonInfo(_person);
+            nextPage.BindingContext = _person;
+            await Navigation.PushAsync(nextPage);
         }
 
         
-        async void EditInfo(Object sender, EventArgs e)
+        /*async void EditInfo(Object sender, EventArgs e)
         {
             var item = sender as Button;
             var res = item.CommandParameter as Person;
@@ -78,8 +81,10 @@ namespace Nutrician
 
             await DisplayAlert("EDIT", $"Edit {res.FirstName}??", "yes", "no");
             _person = res;
-            await Navigation.PushAsync(new RegisterPage());
-        }
+            var nextPage = new UpdatePersonInfo();
+            nextPage.BindingContext = _person;
+            await Navigation.PushAsync(nextPage);
+        }*/
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {

@@ -40,7 +40,7 @@ namespace Nutrician
             //await DisplayAlert("alert", "alert", "yes", "no");
             //DeleteAllConditions();
             //collectionView.ItemsSource =
-            await App.Database.GetConditionName(_medicalCondition.Name, _medicalCondition.ID);
+            //await App.Database.GetConditionName(_medicalCondition.Name, _medicalCondition.ID);
             
         }
 

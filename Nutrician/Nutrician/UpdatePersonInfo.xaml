@@ -1,18 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Nutrician.RegisterPage"
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Nutrician.UpdatePersonInfo"
              BackgroundColor="LightBlue"
              Title = "Nutrician">
         <StackLayout Padding="60" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
             <StackLayout>
             <Image Source="TempLogo.png" WidthRequest="150" HeightRequest="150"></Image>
 
-            <Entry x:Name="txtFirstName"  Placeholder="First Name" TextColor="blue" PlaceholderColor="Gray"></Entry>
-            <Entry x:Name="txtLastName" Placeholder="Last Name" TextColor="blue" PlaceholderColor="Gray"></Entry>
-            <Entry x:Name="txtEmail" Placeholder="Email" TextColor="blue" PlaceholderColor="Gray"></Entry>
-            <Entry x:Name="txtUsername" Placeholder="Username" TextColor="blue" PlaceholderColor="Gray"></Entry>
-            <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" TextColor="blue" PlaceholderColor="Gray"></Entry>
+            <Entry x:Name="txtFirstName" Text="{Binding FirstName}" TextColor="blue"></Entry>
+            <Entry x:Name="txtLastName" Text="{Binding LastName}" TextColor="blue"></Entry>
+            <Entry x:Name="txtEmail" Text="{Binding Email}" TextColor="blue"></Entry>
+            <Label x:Name="txtUsername" Text="{Binding Username}" TextColor="blue"></Label>
+            <Entry x:Name="txtPassword" Text="{Binding Password}" IsPassword="True" TextColor="blue"></Entry>
 
             <Label Text="Gender:"/>
             <RadioButton Content="Female"
@@ -27,7 +28,7 @@
 
             <Button
                     VerticalOptions="Center"
-                Text="Register"
+                Text="Update"
                 TextColor="blue"
                 BackgroundColor="Transparent"
                 BorderColor="blue"

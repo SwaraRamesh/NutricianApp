@@ -80,18 +80,20 @@ namespace DatabaseEx.Droid
 
         public Task<List<MedicalCondition>> Search(string search)
         {
-            return _database.Table<MedicalCondition>().Where(p => p.Name.StartsWith(search)).ToListAsync();
+            return _database.Table<MedicalCondition>().Where(p => p.Name.Contains(search)||
+                                       p.Suggestions.Contains(search)).ToListAsync();
             //async = sends it as it reads from the database
         }
 
-        public Task<List<MedicalCondition>> Search2(string search)
+        /*public Task<List<MedicalCondition>> Search2(string search)
         {
             return _database.Table<MedicalCondition>().Where(p => p.Suggestions.StartsWith(search)).ToListAsync();
         }
+       */
 
-        /*public async Task<int> DeleteAllAccountsAsync()
+        public async Task<int> DeleteAllAccountsAsync()
         {
             return await _database.DeleteAllAsync<Person>();
-        }*/
+        }
     }
 }

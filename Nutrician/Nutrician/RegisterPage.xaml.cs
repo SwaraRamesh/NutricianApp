@@ -71,12 +71,12 @@ namespace Nutrician
             _person = new Person();
             _person.FirstName = txtFirstName.Text;
             _person.LastName = txtLastName.Text;
-            _person.LastName = txtEmail.Text;
-            _person.LastName = txtUsername.Text;
-            _person.LastName = txtPassword.Text;
-            txtUsername.Focus();
+            _person.Email = txtEmail.Text;
+            _person.Username = txtUsername.Text;
+            _person.Password = txtPassword.Text;
+            //txtUsername.Focus();
             
-                App.Database.UpdatePersonAsync(_person);
+            App.Database.SavePersonAsync(_person);
             //}
             //txtFirstName.Text = txtLastName.Text = string.Empty;
             //collectionView.ItemsSource = await App.Database.GetPersonAsync();

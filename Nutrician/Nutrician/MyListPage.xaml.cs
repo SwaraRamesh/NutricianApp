@@ -25,5 +25,9 @@ namespace Nutrician
         {
             Navigation.PushAsync(new MyListPage());
         }
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HomePage());
+        }
     }
 }

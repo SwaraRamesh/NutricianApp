@@ -128,11 +128,14 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Plugin.XCalendar">
+      <Version>2.1.0</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Nutrician\Nutrician.csproj">
-      <Project>{5A9DB049-FDB5-4833-A3D0-6BCD834D2D76}</Project>
+      <Project>{231B591C-FC71-4522-8F3A-48AB3613107A}</Project>
       <Name>Nutrician</Name>
     </ProjectReference>
   </ItemGroup>

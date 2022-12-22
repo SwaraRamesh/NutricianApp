@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xc="clr-namespace:XCalendar;assembly=XCalendar"
              x:Class="Nutrician.RemindersPage"
              BackgroundColor="LightBlue"
              Title = "Nutrician">
@@ -33,6 +33,8 @@
             <Label Text="Welcome to Reminders!" FontSize="20"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <xc:CalendarView x:Name="calendar" DateSelectionChanged="CaledarView_DateSelectionChanged"/>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

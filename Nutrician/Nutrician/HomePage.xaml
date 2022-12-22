@@ -69,13 +69,17 @@
                     </Grid>
                 </StackLayout>
             </StackLayout>
-            <Entry TextChanged = "SearchBar_TextChanged" Placeholder="Search!..." VerticalOptions="Center"/>
-            <ScrollView>
-                <StackLayout>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                <SearchBar x:Name="searchBar" TextChanged = "SearchBar_TextChanged" HorizontalOptions="CenterAndExpand"  Placeholder="Search text"/> 
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                <ScrollView>
                     <CollectionView x:Name="collectionView" VerticalScrollBarVisibility="Always">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                  <Label HorizontalOptions="Center" HorizontalTextAlignment="Center">
+                                    <Label HorizontalOptions="Center" HorizontalTextAlignment="Center">
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <Span Text="{Binding Name}"  TextColor="Gray" FontSize="40"></Span>
@@ -84,11 +88,12 @@
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                     </Label.GestureRecognizers>
-                                  </Label>
+                                    </Label>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                </StackLayout>
-            </ScrollView>
+               
+                </ScrollView>
+            </StackLayout>
         </StackLayout>
 </ContentPage>

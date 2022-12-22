@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,10 @@ namespace Nutrician
         {
             Navigation.PushAsync(new MyListPage());
         }
-        
+
+        private void CaledarView_DateSelectionChanged(object sender, EventArgs arg)
+        {
+            DisplayAlert("Date changed", calendar.SelectedDates.ToString(), "OK");
+        }
     }
 }

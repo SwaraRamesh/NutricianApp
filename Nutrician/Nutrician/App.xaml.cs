@@ -28,7 +28,6 @@ namespace Nutrician
         {
             InitializeComponent();
             createMedicalConditions();
-            //Delete
 
             //MainPage = new MainPage();
 
@@ -76,14 +75,10 @@ namespace Nutrician
             conditions.Add(new MedicalCondition { Name = "Obesity", Suggestions = suggestionsAnemia, Avoid = avoidAnemia, Meals = "Beet root fried rice", VeganMeals = "veganMeals"});
             conditions.Add(new MedicalCondition { Name = "HIV/AIDS", Suggestions = suggestionsKidneyStones, Avoid = avoidKidneyStones, Meals = mealsHeartDisease, VeganMeals = veganMeals});
 
-
             //using (Task<int> task =
             App.Database.SaveAllConditionsAsync(conditions);// { }//
-            //App.Database.DeleteAllConditionsAsync();
+            //App.Database.DeleteAllAccountsAsync();
         }
 
-        /*public async Task DeleteAllConditions() {
-            await App.Database.DeleteAllConditionsAsync();
-        }*/
     }
 }
