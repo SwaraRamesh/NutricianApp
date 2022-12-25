@@ -13,9 +13,12 @@ namespace Nutrician
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RemindersPage : ContentPage
     {
+        //DateTime datePicked;
+        //TimeSpan timePicked;
         public RemindersPage()
         {
             InitializeComponent();
+            //Device.StartTimer(TimeSpan.FromSeconds(1), OnTimerTick);
         }
 
         public void HomeButton(object sender, EventArgs e)
@@ -27,9 +30,42 @@ namespace Nutrician
             Navigation.PushAsync(new MyListPage());
         }
 
-        private void CaledarView_DateSelectionChanged(object sender, EventArgs arg)
+        void datePickerHandler(object sender, DateChangedEventArgs args)
         {
-            DisplayAlert("Date changed", calendar.SelectedDates.ToString(), "OK");
+            DisplayAlert("Time Picked", datePicked.Date.ToString(), "Ok");
+            timePicked.Focus();
         }
+
+        public void timePickerHandler(object sender, EventArgs e)
+        {
+            DisplayAlert("Time Picked", timePicked.Time.ToString(), "Ok");
+
+        }
+
+        /*bool OnTimerTick2()
+        {
+            var datePickerDate = datePicker.Date;
+            DateTime date = DateTime.Now;
+            if (_switch.IsToggled && datePickerDate >= date) {
+
+                _switch.IsToggled = false;
+            }
+            if (_switch2.IsToggled && DateTime.Now.TimeOfDay <= timePicker.Time)
+            {
+                _switch2.IsToggled = false;
+                DisplayAlert("Timer Alert", entryMessage.Text, "OK");
+            }
+            return true;
+        }
+
+        bool OnTimerTick()
+        {
+            if (_switch.IsToggled && DateTime.Now.TimeOfDay >= timePicker.Time)
+            {
+                _switch.IsToggled = false;
+                DisplayAlert("Timer Alert", entryMessage.Text, "OK");
+            }
+            return true;
+        }*/
     }
 }

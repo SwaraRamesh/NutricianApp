@@ -29,12 +29,26 @@
                         CornerRadius="50"
                         Clicked = "MyListButton">
                     </Button>
-                </Grid>
-            <Label Text="Welcome to Reminders!" FontSize="20"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <xc:CalendarView x:Name="calendar" DateSelectionChanged="CaledarView_DateSelectionChanged"/>
+                
+            
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="2">
+                    <DatePicker x:Name="datePicked"
+                                MinimumDate="2000/01/01"
+                                MaximumDate="2025/01/01"
+                                DateSelected="datePickerHandler"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="3">
+
+                    <TimePicker x:Name="timePicked" Time="11:00:00" Format="T" PropertyChanged="timePickerHandler"
+                                />
+                    
+                    <!--Switch x:Name="_switch"/-->
+                </StackLayout>
+                <Entry x:Name="entryMessage" Grid.Row="4"
+                       Placeholder="Enter event to be reminded of"/>
+            </Grid>
         </StackLayout>
-        
     </ContentPage.Content>
 </ContentPage>

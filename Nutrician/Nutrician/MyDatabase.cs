@@ -95,5 +95,20 @@ namespace DatabaseEx.Droid
         {
             return await _database.DeleteAllAsync<Person>();
         }
+
+        public Task<int> SaveReminderAsync(Reminder reminder)
+        {
+            return _database.InsertOrReplaceAsync(reminder);
+        }
+
+        public async Task<int> DeletReminderAsync(Reminder reminder)
+        {
+            return await _database.DeleteAsync(reminder);
+        }
+
+        public Task<int> UpdateReminderAsync(Reminder reminder)
+        {
+            return _database.UpdateAsync(reminder);
+        }
     }
 }
