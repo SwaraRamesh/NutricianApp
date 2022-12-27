@@ -43,8 +43,20 @@
 
                     <TimePicker x:Name="timePicked" Time="11:00:00" Format="T" PropertyChanged="timePickerHandler"
                                 />
-                    
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="5">
                     <!--Switch x:Name="_switch"/-->
+                    <Button
+                        Text="Save"
+                        Grid.Row="0" Grid.Column="2"
+                        TextTransform="None"
+                        FontSize="20"
+                        TextColor="white"
+                        BackgroundColor="blue"
+                        BorderWidth="1.5"
+                        CornerRadius="50"
+                        Clicked = "SaveAlarm">
+                    </Button>
                 </StackLayout>
                 <Entry x:Name="entryMessage" Grid.Row="4"
                        Placeholder="Enter event to be reminded of"/>

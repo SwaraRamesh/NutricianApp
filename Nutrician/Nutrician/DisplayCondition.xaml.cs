@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Nutrician.Models;
-
+using Plugin.Share;
+using Plugin.Share.Abstractions;
 using Xamarin.Forms;
 
 namespace Nutrician
@@ -55,7 +56,16 @@ namespace Nutrician
         {
             Navigation.PushAsync(new HomePage());
         }
-        
+
+        public void ShareMessage(object sender, EventArgs e)
+        {
+            CrossShare.Current.Share(new ShareMessage
+            {
+                Title = "SHARE",
+                Text = Name.Text + ": " + Suggestions.Text + "/n" + Avoid.Text
+            });
+        }
+
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new DisplayCondition(_medicalCondition));

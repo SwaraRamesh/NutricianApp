@@ -15,6 +15,7 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Plugin.XCalendar" Version="2.1.0" />
+    <PackageReference Include="Plugin.Share" Version="7.1.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,5 +37,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Plugin.XCalendar" />
+    <None Remove="Plugin.Share" />
   </ItemGroup>
 </Project>

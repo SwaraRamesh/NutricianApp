@@ -76,10 +76,16 @@
             </StackLayout>
             <StackLayout>
                 <ScrollView>
-                    <CollectionView x:Name="collectionView" VerticalScrollBarVisibility="Always">
-                        <CollectionView.ItemTemplate>
+                    <ListView x:Name="collectionView"
+                              VerticalScrollBarVisibility="Always">
+                        <ListView.ItemTemplate>
                             <DataTemplate>
-                                    <Label HorizontalOptions="Center" HorizontalTextAlignment="Center">
+                                <TextCell Text="{Binding Name}"
+                                          TextColor="Black"
+                                          Tapped="TapGestureRecognizer_Tapped"
+                                />
+                             
+    <!--Label HorizontalOptions="Center" HorizontalTextAlignment="Center">
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <Span Text="{Binding Name}"  TextColor="Gray" FontSize="40"></Span>
@@ -88,10 +94,13 @@
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                     </Label.GestureRecognizers>
-                                    </Label>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
+                                    </Label-->
+                                 </DataTemplate>   
+                                    </ListView.ItemTemplate>
+
+                    </ListView>
+
+
                
                 </ScrollView>
             </StackLayout>

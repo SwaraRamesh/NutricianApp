@@ -20,7 +20,7 @@
                         Clicked = "HomeButton">
                     </Button>
                     <Button Text="Add to MyList"
-                            Grid.Row="0" Grid.Column="2"
+                            Grid.Row="0" Grid.Column="1"
                             TextTransform="None"
                             FontSize="15"
                             TextColor="white"
@@ -29,6 +29,15 @@
                             CornerRadius="50"
                             Clicked = "AddToListButton">
                     </Button>
+
+                    <ImageButton Source="share.png"
+                        Grid.Row="0" Grid.Column="2"
+                        BorderWidth="1.5"
+                        CornerRadius="50"
+                        WidthRequest="20"
+                        HeightRequest="20"
+                        Clicked = "ShareMessage"/>
+
                 </Grid>
             </StackLayout>
                 <Grid x:Name="ConditionPage">

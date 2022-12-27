@@ -7,7 +7,7 @@ using Nutrician.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+//
 namespace Nutrician
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -88,7 +88,7 @@ namespace Nutrician
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            var item = sender as Label;
+            var item = sender as TextCell;
             var res = item.BindingContext as MedicalCondition;
             Application.Current.Properties["Name"] = res.Name;
             Navigation.PushAsync(new DisplayCondition(res));
