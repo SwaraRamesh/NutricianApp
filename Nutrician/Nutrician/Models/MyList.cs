@@ -10,8 +10,6 @@ namespace Nutrician
         public int? Id { get; set; }
         [Unique, NotNull]
         public String Username { get; set; }
-        [NotNull]
-        public String  { get; set; }
 
         public MyList()
 		{

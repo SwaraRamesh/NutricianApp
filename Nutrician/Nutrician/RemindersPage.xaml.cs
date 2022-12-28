@@ -4,7 +4,6 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,12 +14,15 @@ namespace Nutrician
     {
         //DateTime datePicked;
         //TimeSpan timePicked;
+
+        Models.Reminder _reminder;
+
         public RemindersPage()
         {
             InitializeComponent();
             //Device.StartTimer(TimeSpan.FromSeconds(1), OnTimerTick);
         }
-
+        
         public void HomeButton(object sender, EventArgs e)
         {
             Navigation.PushAsync(new HomePage());
@@ -56,6 +58,16 @@ namespace Nutrician
                 });
             }
             
+        }
+
+        public void AddReminderButton(object sender, EventArgs e)
+        {
+            App.Database.SaveReminderAsync(_reminder);
+        }
+
+        public void DeleteReminderButton(object sender, EventArgs e)
+        {
+            App.Database.DeletReminderAsync(_reminder);
         }
 
         void datePickerHandler(object sender, DateChangedEventArgs args)

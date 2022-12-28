@@ -110,5 +110,20 @@ namespace DatabaseEx.Droid
         {
             return _database.UpdateAsync(reminder);
         }
+
+        public Task<int> SaveMyListAsync(MyList list)
+        {
+            return _database.InsertOrReplaceAsync(list);
+        }
+
+        public async Task<int> DeletMyListAsync(MyList list)
+        {
+            return await _database.DeleteAsync(list);
+        }
+
+        public Task<int> UpdateMyListAsync(MyList list)
+        {
+            return _database.UpdateAsync(list);
+        }
     }
 }
