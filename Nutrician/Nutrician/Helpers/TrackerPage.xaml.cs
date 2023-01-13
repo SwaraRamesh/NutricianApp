@@ -64,7 +64,7 @@ namespace Nutrician.Helpers
             
                 //result = await DisplayAlert("FFFFFUpdate", "Update from the database", "Yes", "No");
 
-            if (_userNote == null)
+            if (_userNote.Note == null)
             {
                 //result = await DisplayAlert("LLLLUpdate", "Update from the database", "Yes", "No");
                 await App.Database.SaveNoteAsync(new Models.UserNote
@@ -78,6 +78,9 @@ namespace Nutrician.Helpers
                 //result = await DisplayAlert("TOUpdate", $"Update {_person.Name} from the database", "Yes", "No");
                 await App.Database.UpdateNoteAsync(_userNote);
             }
+            txtUserEntry.Text = string.Empty;
+            collectionView.ItemsSource = await App.Database.GetMyNotes();
+
             txtUserEntry.Text = string.Empty;
             collectionView.ItemsSource = await App.Database.GetMyNotes();
         }
