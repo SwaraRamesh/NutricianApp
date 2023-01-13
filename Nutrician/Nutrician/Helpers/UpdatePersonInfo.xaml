@@ -2,12 +2,13 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="Nutrician.UpdatePersonInfo"
-             BackgroundColor="LightBlue"
-             Title = "Nutrician">
+    x:Class="Nutrician.Helpers.UpdatePersonInfo"
+             BackgroundColor="WhiteSmoke"
+             Title = "Profile"
+             IconImageSource="EditRegistration.png">
         <StackLayout Padding="60" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
             <StackLayout>
-            <Image Source="TempLogo.png" WidthRequest="150" HeightRequest="150"></Image>
+            <Image Source="NewLogo.png" WidthRequest="150" HeightRequest="150"></Image>
 
             <Entry x:Name="txtFirstName" Text="{Binding FirstName}" TextColor="blue"></Entry>
             <Entry x:Name="txtLastName" Text="{Binding LastName}" TextColor="blue"></Entry>
@@ -27,7 +28,7 @@
                         CheckedChanged="OnGenderRadioButtonCheckedChanged" IsChecked="true"/>
 
             <Button
-                    VerticalOptions="Center"
+                VerticalOptions="Center"
                 Text="Update"
                 TextColor="blue"
                 BackgroundColor="Transparent"

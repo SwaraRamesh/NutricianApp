@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nutrician.RegisterPage"
-             BackgroundColor="LightBlue"
-             Title = "Nutrician">
+             BackgroundColor="WhiteSmoke"
+             Title = "Register">
         <StackLayout Padding="60" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
             <StackLayout>
-            <Image Source="TempLogo.png" WidthRequest="150" HeightRequest="150"></Image>
+            <Image Source="NewLogo.png" WidthRequest="150" HeightRequest="150"></Image>
 
             <Entry x:Name="txtFirstName"  Placeholder="First Name" TextColor="blue" PlaceholderColor="Gray"></Entry>
             <Entry x:Name="txtLastName" Placeholder="Last Name" TextColor="blue" PlaceholderColor="Gray"></Entry>

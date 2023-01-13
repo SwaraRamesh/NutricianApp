@@ -27,11 +27,13 @@ namespace Nutrician
         public App()
         {
             InitializeComponent();
+            //App.database.dropTableMyList();
             createMedicalConditions();
-
+            //App.database.DeleteAllMyList();
             //MainPage = new MainPage();
 
             MainPage = new NavigationPage(new LoginUI());
+            //MainPage = new NavigationPage(new TabbedPageView());
         }
 
         protected override void OnStart()
@@ -59,7 +61,8 @@ namespace Nutrician
             String veganMeals = "veganmeals";//{ "Vegan Pasta", "Rotis" };
             //String lactoseIntolerantMeals = "lactose";//{ "MNM", "milk-less chapati" };
             List<MedicalCondition> conditions = new List<MedicalCondition>();
-
+            //List<MyList> list = new List<MyList>();
+            List<UserNote> userNotes = new List<UserNote>();
             //****** make a loop to make/add instances of Medical Condition to the conditions list
 
             conditions.Add(new MedicalCondition { Name = "Heart Disease",Suggestions = suggestionsHeartDisease, Avoid = avoidHeartDisease, Meals = mealsHeartDisease, VeganMeals=veganMeals});

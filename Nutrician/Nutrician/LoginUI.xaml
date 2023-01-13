@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Nutrician.LoginUI"
-             BackgroundColor="LightBlue"
+             BackgroundColor="WhiteSmoke"
              Title = "Nutrician">
     <ContentPage.Content>
         <StackLayout Padding="40" HorizontalOptions="FillAndExpand">
 
-            <Image Source="TempLogo.png" WidthRequest="180" HeightRequest="250"></Image>
+            <Image Source="NewLogo.png" WidthRequest="180" HeightRequest="250"></Image>
             
             <Entry x:Name="txtUsername" Placeholder="Username" TextColor="Blue" PlaceholderColor="Gray"></Entry>
             <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" TextColor="Blue" PlaceholderColor="Gray"></Entry>

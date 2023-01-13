@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xc="clr-namespace:XCalendar;assembly=XCalendar"
-             x:Class="Nutrician.RemindersPage"
-             BackgroundColor="LightBlue"
-             Title = "Nutrician">
+             x:Class="Nutrician.Helpers.RemindersPage"
+             BackgroundColor="WhiteSmoke"
+             Title = "Reminders"
+             IconImageSource="Reminders.png">
     <ContentPage.Content>
         <StackLayout>
             <Grid Margin="15">
@@ -13,29 +14,14 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button
-                        Grid.Row="0" Grid.Column="0"
-                        Text="Home" Padding="5"
-                        Clicked = "HomeButton">
-                    </Button>
-                    <Button
-                        Text="My List"
-                        Grid.Row="0" Grid.Column="2"
-                        TextTransform="None"
-                        FontSize="20"
-                        TextColor="white"
-                        BackgroundColor="blue"
-                        BorderWidth="1.5"
-                        CornerRadius="50"
-                        Clicked = "MyListButton">
-                    </Button>
-                
-            
+                    
                 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="2">
                     <DatePicker x:Name="datePicked"
+                                Format="D"
                                 MinimumDate="2000/01/01"
                                 MaximumDate="2025/01/01"
+                                Date="{Binding SelectedDate}"
                                 DateSelected="datePickerHandler"/>
                 </StackLayout>
 

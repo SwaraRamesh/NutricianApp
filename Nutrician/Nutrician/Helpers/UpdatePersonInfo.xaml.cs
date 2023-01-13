@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
-namespace Nutrician
+namespace Nutrician.Helpers
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UpdatePersonInfo : ContentPage
     {
         Person _person;
@@ -14,10 +16,12 @@ namespace Nutrician
             InitializeComponent();
         }
 
-        public UpdatePersonInfo(Person p)
+        public UpdatePersonInfo(Person person)
         {
             InitializeComponent();
-            _person = p;
+
+            Application.Current.Properties["Username"] = txtUsername.Text;
+            _person = person;
         }
 
         void OnGenderRadioButtonCheckedChanged(object sender, CheckedChangedEventArgs e)
@@ -35,7 +39,7 @@ namespace Nutrician
 
             App.Database.UpdatePersonAsync(_person);
 
-            var nextPage = new HomePage(_person);
+            var nextPage = new TabbedPageView();
             nextPage.BindingContext = _person;
             await Navigation.PushAsync(nextPage);
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Nutrician
+namespace Nutrician.Helpers
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RemindersPage : ContentPage
@@ -22,21 +22,15 @@ namespace Nutrician
             InitializeComponent();
             //Device.StartTimer(TimeSpan.FromSeconds(1), OnTimerTick);
         }
-        
-        public void HomeButton(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new HomePage());
-        }
-        public void MyListButton(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new MyListPage());
-        }
+
+
 
         public void SaveAlarm(object sender, EventArgs e)
         {
 
             DateTime date = DateTime.Now;
-            DateTime dt = new DateTime(date.Year, date.Month, date.Day, timePicked.Time.Hours, timePicked.Time.Minutes, timePicked.Time.Seconds);
+            DateTime dPicked = datePicked.Date;
+            DateTime dt = new DateTime(dPicked.Year, dPicked.Month, dPicked.Day, timePicked.Time.Hours, timePicked.Time.Minutes, timePicked.Time.Seconds);
             TimeSpan timeToAlarm = dt - date;
             if (timeToAlarm.TotalSeconds <= 0)
             {
@@ -51,13 +45,13 @@ namespace Nutrician
                     Device.BeginInvokeOnMainThread(() =>
                     {
                         // interact with UI elements
-                        DisplayAlert("Reminder", "DRINK WATER AND GO TO THE BATHROOM", "Ok");
+                        DisplayAlert("Reminder", entryMessage.Text, "Ok");
 
                     });
                     return true; // runs again, or false to stop
                 });
             }
-            
+
         }
 
         public void AddReminderButton(object sender, EventArgs e)
@@ -65,9 +59,9 @@ namespace Nutrician
             App.Database.SaveReminderAsync(_reminder);
         }
 
-        public void DeleteReminderButton(object sender, EventArgs e)
+        public async void DeleteReminderButton(object sender, EventArgs e)
         {
-            App.Database.DeletReminderAsync(_reminder);
+            await App.Database.DeletReminderAsync(_reminder);
         }
 
         void datePickerHandler(object sender, DateChangedEventArgs args)
@@ -82,31 +76,31 @@ namespace Nutrician
 
         }
 
-       
-    /*bool OnTimerTick2()
-    {
-        var datePickerDate = datePicker.Date;
-        DateTime date = DateTime.Now;
-        if (_switch.IsToggled && datePickerDate >= date) {
 
-            _switch.IsToggled = false;
-        }
-        if (_switch2.IsToggled && DateTime.Now.TimeOfDay <= timePicker.Time)
+        /*bool OnTimerTick2()
         {
-            _switch2.IsToggled = false;
-            DisplayAlert("Timer Alert", entryMessage.Text, "OK");
+            var datePickerDate = datePicker.Date;
+            DateTime date = DateTime.Now;
+            if (_switch.IsToggled && datePickerDate >= date) {
+
+                _switch.IsToggled = false;
+            }
+            if (_switch2.IsToggled && DateTime.Now.TimeOfDay <= timePicker.Time)
+            {
+                _switch2.IsToggled = false;
+                DisplayAlert("Timer Alert", entryMessage.Text, "OK");
+            }
+            return true;
         }
-        return true;
+
+        bool OnTimerTick()
+        {
+            if (_switch.IsToggled && DateTime.Now.TimeOfDay >= timePicker.Time)
+            {
+                _switch.IsToggled = false;
+                DisplayAlert("Timer Alert", entryMessage.Text, "OK");
+            }
+            return true;
+        }*/
     }
-
-    bool OnTimerTick()
-    {
-        if (_switch.IsToggled && DateTime.Now.TimeOfDay >= timePicker.Time)
-        {
-            _switch.IsToggled = false;
-            DisplayAlert("Timer Alert", entryMessage.Text, "OK");
-        }
-        return true;
-    }*/
-}
 }

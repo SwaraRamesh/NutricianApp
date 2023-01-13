@@ -15,10 +15,15 @@ namespace DatabaseEx.Droid
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Person>().Wait();
             _database.CreateTableAsync<MedicalCondition>().Wait();
-            
+            _database.CreateTableAsync<MyList>().Wait();
+            _database.CreateTableAsync<UserNote>().Wait();
         }
         //m
 
+        public async void dropTableMyList()
+        {
+            await _database.DropTableAsync<MyList>();
+        }
         public Task<Person> GetPersonByUsernameAsync(String username)
         {
             return _database.Table<Person>().Where(p => p.Username.Equals(username)).FirstOrDefaultAsync();
@@ -113,7 +118,7 @@ namespace DatabaseEx.Droid
 
         public Task<int> SaveMyListAsync(MyList list)
         {
-            return _database.InsertOrReplaceAsync(list);
+            return _database.InsertAsync(list);
         }
 
         public async Task<int> DeletMyListAsync(MyList list)
@@ -124,6 +129,36 @@ namespace DatabaseEx.Droid
         public Task<int> UpdateMyListAsync(MyList list)
         {
             return _database.UpdateAsync(list);
+        }
+
+        public Task<List<MyList>> GetMyList(string username)
+        {
+            return _database.Table<MyList>().Where(p => p.Username.Equals(username)).ToListAsync();
+        }
+
+        public async Task<int> DeleteAllMyList()
+        {
+            return await _database.DeleteAllAsync<MyList>();
+        }
+
+        public Task<int> SaveNoteAsync(UserNote userNote)
+        {
+            return _database.InsertAsync(userNote);
+        }
+
+        public async Task<int> DeletNoteAsync(UserNote userNote)
+        {
+            return await _database.DeleteAsync(userNote);
+        }
+
+        public Task<int> UpdateNoteAsync(UserNote userNote)
+        {
+            return _database.UpdateAsync(userNote);
+        }
+
+        public Task<List<UserNote>> GetMyNotes()
+        {
+            return _database.Table<UserNote>().ToListAsync();
         }
     }
 }

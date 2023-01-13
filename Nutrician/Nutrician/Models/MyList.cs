@@ -8,11 +8,12 @@ namespace Nutrician
         [PrimaryKey, AutoIncrement]
         // ? means it can be null or it is nullable
         public int? Id { get; set; }
-        [Unique, NotNull]
+        
         public String Username { get; set; }
+        
+        public String Name { get; set; }
+        
+        public int medId { get; set; }
 
-        public MyList()
-		{
-		}
-	}
+    }
 }

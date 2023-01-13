@@ -70,9 +70,10 @@ namespace Nutrician
 
                 //await DisplayAlert("Welcome", $"Welcome {person.FirstName}", "OK");
 
-                var nextPage = new HomePage(person);
-                nextPage.BindingContext = person;
-                await Navigation.PushAsync(nextPage);
+                //var nextPage = new TabbedPageView();
+                //nextPage.BindingContext = person;
+                Application.Current.Properties["Username"] = txtUsername.Text;
+                await Navigation.PushAsync(new TabbedPageView());
             }
             else
             {

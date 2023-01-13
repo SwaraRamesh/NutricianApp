@@ -8,21 +8,25 @@ using Xamarin.Forms;
 namespace Nutrician
 {	
 	public partial class DisplayCondition : ContentPage
-	{	
+	{
+        string username;
 		public DisplayCondition ()
 		{
 			InitializeComponent ();
-            
-            
-		}
-        MedicalCondition _medicalCondition;
+            username = Application.Current.Properties["Username"].ToString();
 
-        public DisplayCondition(MedicalCondition condition)
+        }
+        MedicalCondition _medicalCondition;
+        MyList _myList;
+        //Person _person;
+
+        public DisplayCondition(MedicalCondition condition, string username)//Person person)
         {
             InitializeComponent();
             Name.Text = condition.Name;
             Suggestions.Text = condition.Suggestions;
             Avoid.Text = condition.Avoid;
+            //_person = person;
             /*DisplayAlert("Ok?", $"{condition.Name}", "yes", "no");
             _medicalCondition.Name = condition.Name;
             _medicalCondition.Suggestions = condition.Suggestions;
@@ -31,7 +35,8 @@ namespace Nutrician
             _medicalCondition.Meals = condition.Meals;
             _medicalCondition.VeganMeals = condition.VeganMeals;
             //_medicalCondition.LactoseIntolerant = condition.LactoseIntolerant;*/
-            var ret = condition.Name;
+            //var ret = condition.Name;
+            _medicalCondition = condition;
         }
         
 
@@ -45,17 +50,26 @@ namespace Nutrician
             
         }
 
-        public void AddToListButton(object sender, EventArgs e)
+        public async void AddToListButton(object sender, EventArgs e)
         {
+
+            _myList = new MyList();
+            _myList.medId = _medicalCondition.ID;
+            _myList.Username = Application.Current.Properties["Username"].ToString();
+            _myList.Name = _medicalCondition.Name;
+            DisplayAlert("" + _myList.medId, _myList.Username, "ok");
             //collectionView.ItemsSource =
-            App.Database.GetConditionName(_medicalCondition.Name, _medicalCondition.ID);
-            Navigation.PushAsync(new DisplayCondition(_medicalCondition));
+            
+            //var nextPage = new MyListPage(_medicalCondition, _person);
+            //nextPage.BindingContext = _person;
+            await App.Database.SaveMyListAsync(_myList);
+            
         }
 
-        public void HomeButton(object sender, EventArgs e)
+        /*public void HomeButton(object sender, EventArgs e)
         {
             Navigation.PushAsync(new HomePage());
-        }
+        }*/
 
         public void ShareMessage(object sender, EventArgs e)
         {
@@ -68,7 +82,7 @@ namespace Nutrician
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new DisplayCondition(_medicalCondition));
+            Navigation.PushAsync(new DisplayCondition(_medicalCondition, username));
         }
 
         /*async void DeleteAllConditions() {
