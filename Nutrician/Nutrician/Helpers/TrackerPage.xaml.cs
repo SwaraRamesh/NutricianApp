@@ -81,8 +81,7 @@ namespace Nutrician.Helpers
             txtUserEntry.Text = string.Empty;
             collectionView.ItemsSource = await App.Database.GetMyNotes();
 
-            txtUserEntry.Text = string.Empty;
-            collectionView.ItemsSource = await App.Database.GetMyNotes();
+            _userNote.Note = null;
         }
 
 
