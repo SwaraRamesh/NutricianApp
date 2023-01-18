@@ -24,6 +24,7 @@ namespace Nutrician
         {
             InitializeComponent();
             Name.Text = condition.Name;
+            Symptoms.Text = condition.Symptoms;
             Suggestions.Text = condition.Suggestions;
             Avoid.Text = condition.Avoid;
             //_person = person;

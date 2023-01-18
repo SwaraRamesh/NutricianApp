@@ -10,9 +10,11 @@ namespace Nutrician.Helpers
     public partial class TrackerPage : ContentPage
     {
         Models.UserNote _userNote;
+        string username;
         public TrackerPage()
         {
             InitializeComponent();
+            username = Application.Current.Properties["Username"].ToString();
             _userNote = new Models.UserNote();
             txtUserEntry.Focus();
         }
@@ -78,8 +80,9 @@ namespace Nutrician.Helpers
                 //result = await DisplayAlert("TOUpdate", $"Update {_person.Name} from the database", "Yes", "No");
                 await App.Database.UpdateNoteAsync(_userNote);
             }
-            txtUserEntry.Text = string.Empty;
+            
             collectionView.ItemsSource = await App.Database.GetMyNotes();
+            txtUserEntry.Text = string.Empty;
 
             _userNote.Note = null;
         }

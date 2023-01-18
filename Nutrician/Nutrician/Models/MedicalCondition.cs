@@ -12,6 +12,7 @@ namespace Nutrician.Models
         public int ID { get; set; }
         //[Unique]
         public string Name { get; set; }
+        public string Symptoms { get; set; }
         public string Suggestions { get; set; }
         public string Avoid { get; set; }
         public string Meals { get; set; }

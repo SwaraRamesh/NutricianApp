@@ -159,6 +159,7 @@ namespace DatabaseEx.Droid
         public Task<List<UserNote>> GetMyNotes()
         {
             return _database.Table<UserNote>().ToListAsync();
+            //return _database.Table<UserNote>().Where(p => p.Username.Equals(username)).ToListAsync();
         }
     }
 }

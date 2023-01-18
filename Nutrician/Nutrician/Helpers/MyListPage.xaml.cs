@@ -46,9 +46,9 @@ namespace Nutrician.Helpers
         {
             Navigation.PushAsync(new MyListPage());
         }*/
-        // void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        //{
-            //Navigation.PushAsync(new HomePage());
-        //}
+        /*void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new DisplayCondition());
+        }*/
     }
 }
