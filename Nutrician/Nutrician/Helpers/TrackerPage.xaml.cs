@@ -62,13 +62,9 @@ namespace Nutrician.Helpers
 
         async void SaveButton(object sender, EventArgs e)
         {
-            //var result = await DisplayAlert("add", $"Add {nameEntry.Text} from the database", "Yes", "No");
-            
-                //result = await DisplayAlert("FFFFFUpdate", "Update from the database", "Yes", "No");
 
             if (_userNote.Note == null)
             {
-                //result = await DisplayAlert("LLLLUpdate", "Update from the database", "Yes", "No");
                 await App.Database.SaveNoteAsync(new Models.UserNote
                 {
                     Note = txtUserEntry.Text
@@ -77,7 +73,6 @@ namespace Nutrician.Helpers
             else
             {
                 _userNote.Note = txtUserEntry.Text;
-                //result = await DisplayAlert("TOUpdate", $"Update {_person.Name} from the database", "Yes", "No");
                 await App.Database.UpdateNoteAsync(_userNote);
             }
             

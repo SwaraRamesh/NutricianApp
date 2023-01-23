@@ -58,7 +58,7 @@ namespace Nutrician
             _myList.medId = _medicalCondition.ID;
             _myList.Username = Application.Current.Properties["Username"].ToString();
             _myList.Name = _medicalCondition.Name;
-            DisplayAlert("" + _myList.medId, _myList.Username, "ok");
+            //DisplayAlert("" + _myList.medId, _myList.Username, "ok");
             //collectionView.ItemsSource =
             
             //var nextPage = new MyListPage(_medicalCondition, _person);

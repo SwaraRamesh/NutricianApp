@@ -87,7 +87,6 @@ namespace DatabaseEx.Droid
         {
             return _database.Table<MedicalCondition>().Where(p => p.Name.Contains(search)||
                                        p.Suggestions.Contains(search)).ToListAsync();
-            //async = sends it as it reads from the database
         }
 
         /*public Task<List<MedicalCondition>> Search2(string search)
@@ -161,5 +160,6 @@ namespace DatabaseEx.Droid
             return _database.Table<UserNote>().ToListAsync();
             //return _database.Table<UserNote>().Where(p => p.Username.Equals(username)).ToListAsync();
         }
+
     }
 }
