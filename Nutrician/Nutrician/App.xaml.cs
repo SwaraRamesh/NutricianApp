@@ -15,6 +15,7 @@ namespace Nutrician
 
         public static MyDatabase Database
         {
+            //
             get
             {
                 if (database == null)
